@@ -12,10 +12,6 @@ def main():
             sys.stdout.write(output + '\n')
         except Exception as e:
             pass
-            #print(e)
-            #print(data['date'])
-            #output = json.dumps(data)
-            #sys.stdout.write(output + '\n')
 
 def parse_date(data):
     source = data['source']
