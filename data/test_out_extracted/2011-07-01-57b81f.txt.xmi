@@ -1,0 +1,423 @@
+<?xml version="1.1" encoding="UTF-8"?><xmi:XMI xmlns:time="http:///org/texttechnologylab/annotation/semaf/isotimeml/time.ecore" xmlns:type16="http:///org/hucompute/textimager/uima/type.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore" xmlns:tweet="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos/tweet.ecore" xmlns:annotation="http:///org/hucompute/wikidragon/core/nlp/annotation.ecore" xmlns:type15="http:///org/dkpro/similarity/uima/entailment/type.ecore" xmlns:type20="http:///org/texttechnologylab/annotation/context/type.ecore" xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore" xmlns:administration="http:///org/texttechnologylab/annotation/administration.ecore" xmlns:type18="http:///org/texttechnologylab/annotation/node/type.ecore" xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/frequency/tfidf/type.ecore" xmlns:type21="http:///org/texttechnologylab/annotation/orientation/type.ecore" xmlns:isospace="http:///org/texttechnologylab/annotation/semaf/isospace.ecore" xmlns:iaa="http:///org/texttechnologylab/iaa.ecore" xmlns:type11="http:///de/tudarmstadt/ukp/dkpro/core/api/transform/type.ecore" xmlns:sentence="http:///org/texttechnologylab/annotation/sentence.ecore" xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/anomaly/type.ecore" xmlns:isobase="http:///org/texttechnologylab/annotation/semaf/isobase.ecore" xmlns:type13="http:///org/dkpro/core/api/xml/type.ecore" xmlns:segmentation="http:///org/hucompute/textimager/uima/type/segmentation.ecore" xmlns:ocr="http:///org/texttechnologylab/annotation/ocr.ecore" xmlns:score="http:///org/texttechnologylab/annotation/score.ecore" xmlns:type19="http:///org/texttechnologylab/annotation/attribution/type.ecore" xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore" xmlns:isotimeml="http:///org/texttechnologylab/annotation/semaf/isotimeml.ecore" xmlns:tcas="http:///uima/tcas.ecore" xmlns:type="http:///countAnnotator/type.ecore" xmlns:type14="http:///org/dkpro/similarity/uima/api/type.ecore" xmlns:semafsr="http:///org/texttechnologylab/annotation/semaf/semafsr.ecore" xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore" xmlns:type8="http:///de/tudarmstadt/ukp/dkpro/core/api/semantics/type.ecore" xmlns:heideltime="http:///de/unihd/dbs/uima/types/heideltime.ecore" xmlns:ducc="http:///org/apache/uima/ducc.ecore" xmlns:type5="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore" xmlns:token="http:///org/texttechnologylab/annotation/token.ecore" xmlns:typo="http:///org/texttechnologylab/annotation/typo.ecore" xmlns:type9="http:///de/tudarmstadt/ukp/dkpro/core/api/structure/type.ecore" xmlns:type17="http:///org/texttechnologylab/annotation/type.ecore" xmlns:meta="http:///org/texttechnologylab/annotation/semaf/meta.ecore" xmlns:knowledge="http:///org/texttechnologylab/annotation/knowledge.ecore" xmlns:wikidata="http:///org/hucompute/textimager/uima/type/wikidata.ecore" xmlns:morph="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/morph.ecore" xmlns:wikipedia="http:///org/hucompute/textimager/uima/type/wikipedia.ecore" xmlns:annotation2="http:///org/texttechnologylab/annotation.ecore" xmlns:category="http:///org/hucompute/textimager/uima/type/category.ecore" xmlns:twitter="http:///org/texttechnologylab/annotation/twitter.ecore" xmlns:type10="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type.ecore" xmlns:IsoSpatial="http:///org/texttechnologylab/annotation/semaf/IsoSpatial.ecore" xmlns:type6="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore" xmlns:type12="http:///de/tudarmstadt/ukp/dkpro/core/io/jwpl/type.ecore" xmlns:type7="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore" xmlns:concept="http:///org/texttechnologylab/annotation/type/concept.ecore" xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore" xmlns:Room="http:///org/texttechnologylab/annotation/Room.ecore" xmlns:type22="http:///org/texttechnologylab/annotation/temporal/type.ecore" xmlns:chunk="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/chunk.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <type5:DocumentMetaData xmi:id="1" sofa="17" begin="0" end="292" language="en" documentTitle="2011-07-01-57b81f.txt" documentId="2011-07-01-57b81f.txt" documentUri="file:/resources/corpora/Wikipedia-Tickermeldungen/test_in/2011-07-01-57b81f.txt" collectionId="file:/resources/corpora/Wikipedia-Tickermeldungen/test_in/" documentBaseUri="file:/resources/corpora/Wikipedia-Tickermeldungen/test_in/" isLastSegment="false"/>
+    <annotation2:DocumentModification xmi:id="12" sofa="17" user="baumartz" timestamp="1619694177" comment="textimager"/>
+    <type7:Sentence xmi:id="24" sofa="17" begin="0" end="19"/>
+    <type7:Sentence xmi:id="29" sofa="17" begin="19" end="258"/>
+    <type7:Sentence xmi:id="34" sofa="17" begin="259" end="271"/>
+    <type7:Sentence xmi:id="39" sofa="17" begin="272" end="292"/>
+    <type7:Token xmi:id="44" sofa="17" begin="0" end="7" lemma="1670" pos="798" order="0"/>
+    <type7:Token xmi:id="57" sofa="17" begin="8" end="16" lemma="1675" pos="804" order="0"/>
+    <type7:Token xmi:id="70" sofa="17" begin="17" end="19" lemma="1680" pos="810" order="0"/>
+    <type7:Token xmi:id="83" sofa="17" begin="19" end="20" lemma="1685" pos="816" order="0"/>
+    <type7:Token xmi:id="96" sofa="17" begin="21" end="26" lemma="1690" pos="822" order="0"/>
+    <type7:Token xmi:id="109" sofa="17" begin="27" end="38" lemma="1695" pos="828" order="0"/>
+    <type7:Token xmi:id="122" sofa="17" begin="39" end="48" lemma="1700" pos="834" order="0"/>
+    <type7:Token xmi:id="135" sofa="17" begin="49" end="50" lemma="1705" pos="840" order="0"/>
+    <type7:Token xmi:id="148" sofa="17" begin="51" end="53" lemma="1710" pos="846" order="0"/>
+    <type7:Token xmi:id="161" sofa="17" begin="53" end="54" lemma="1715" pos="852" order="0"/>
+    <type7:Token xmi:id="174" sofa="17" begin="54" end="61" lemma="1720" pos="858" order="0"/>
+    <type7:Token xmi:id="187" sofa="17" begin="62" end="68" lemma="1725" pos="864" order="0"/>
+    <type7:Token xmi:id="200" sofa="17" begin="68" end="69" lemma="1730" pos="870" order="0"/>
+    <type7:Token xmi:id="213" sofa="17" begin="70" end="73" lemma="1735" pos="876" order="0"/>
+    <type7:Token xmi:id="226" sofa="17" begin="74" end="82" lemma="1740" pos="882" order="0"/>
+    <type7:Token xmi:id="239" sofa="17" begin="83" end="85" lemma="1745" pos="888" order="0"/>
+    <type7:Token xmi:id="252" sofa="17" begin="86" end="90" lemma="1750" pos="894" order="0"/>
+    <type7:Token xmi:id="265" sofa="17" begin="90" end="91" lemma="1755" pos="900" order="0"/>
+    <type7:Token xmi:id="278" sofa="17" begin="92" end="100" lemma="1760" pos="906" order="0"/>
+    <type7:Token xmi:id="291" sofa="17" begin="101" end="107" lemma="1765" pos="912" order="0"/>
+    <type7:Token xmi:id="304" sofa="17" begin="108" end="110" lemma="1770" pos="918" order="0"/>
+    <type7:Token xmi:id="317" sofa="17" begin="111" end="115" lemma="1775" pos="924" order="0"/>
+    <type7:Token xmi:id="330" sofa="17" begin="116" end="125" lemma="1780" pos="930" order="0"/>
+    <type7:Token xmi:id="343" sofa="17" begin="125" end="126" lemma="1785" pos="936" order="0"/>
+    <type7:Token xmi:id="356" sofa="17" begin="127" end="131" lemma="1790" pos="942" order="0"/>
+    <type7:Token xmi:id="369" sofa="17" begin="132" end="141" lemma="1795" pos="948" order="0"/>
+    <type7:Token xmi:id="382" sofa="17" begin="142" end="145" lemma="1800" pos="954" order="0"/>
+    <type7:Token xmi:id="395" sofa="17" begin="146" end="149" lemma="1805" pos="960" order="0"/>
+    <type7:Token xmi:id="408" sofa="17" begin="150" end="154" lemma="1810" pos="966" order="0"/>
+    <type7:Token xmi:id="421" sofa="17" begin="155" end="160" lemma="1815" pos="972" order="0"/>
+    <type7:Token xmi:id="434" sofa="17" begin="160" end="161" lemma="1820" pos="978" order="0"/>
+    <type7:Token xmi:id="447" sofa="17" begin="162" end="168" lemma="1825" pos="984" order="0"/>
+    <type7:Token xmi:id="460" sofa="17" begin="169" end="171" lemma="1830" pos="990" order="0"/>
+    <type7:Token xmi:id="473" sofa="17" begin="172" end="176" lemma="1835" pos="996" order="0"/>
+    <type7:Token xmi:id="486" sofa="17" begin="177" end="179" lemma="1840" pos="1002" order="0"/>
+    <type7:Token xmi:id="499" sofa="17" begin="180" end="183" lemma="1845" pos="1008" order="0"/>
+    <type7:Token xmi:id="512" sofa="17" begin="184" end="188" lemma="1850" pos="1014" order="0"/>
+    <type7:Token xmi:id="525" sofa="17" begin="189" end="191" lemma="1855" pos="1020" order="0"/>
+    <type7:Token xmi:id="538" sofa="17" begin="192" end="198" lemma="1860" pos="1026" order="0"/>
+    <type7:Token xmi:id="551" sofa="17" begin="199" end="204" lemma="1865" pos="1032" order="0"/>
+    <type7:Token xmi:id="564" sofa="17" begin="205" end="214" lemma="1870" pos="1038" order="0"/>
+    <type7:Token xmi:id="577" sofa="17" begin="214" end="215" lemma="1875" pos="1044" order="0"/>
+    <type7:Token xmi:id="590" sofa="17" begin="216" end="226" lemma="1880" pos="1050" order="0"/>
+    <type7:Token xmi:id="603" sofa="17" begin="227" end="235" lemma="1885" pos="1056" order="0"/>
+    <type7:Token xmi:id="616" sofa="17" begin="236" end="243" lemma="1890" pos="1062" order="0"/>
+    <type7:Token xmi:id="629" sofa="17" begin="243" end="244" lemma="1895" pos="1068" order="0"/>
+    <type7:Token xmi:id="642" sofa="17" begin="245" end="254" lemma="1900" pos="1074" order="0"/>
+    <type7:Token xmi:id="655" sofa="17" begin="255" end="257" lemma="1905" pos="1080" order="0"/>
+    <type7:Token xmi:id="668" sofa="17" begin="257" end="258" lemma="1910" pos="1086" order="0"/>
+    <type7:Token xmi:id="681" sofa="17" begin="259" end="260" lemma="1915" pos="1092" order="0"/>
+    <type7:Token xmi:id="694" sofa="17" begin="260" end="262" lemma="1920" pos="1098" order="0"/>
+    <type7:Token xmi:id="707" sofa="17" begin="263" end="270" lemma="1925" pos="1104" order="0"/>
+    <type7:Token xmi:id="720" sofa="17" begin="270" end="271" lemma="1930" pos="1110" order="0"/>
+    <type7:Token xmi:id="733" sofa="17" begin="272" end="273" lemma="1935" pos="1116" order="0"/>
+    <type7:Token xmi:id="746" sofa="17" begin="273" end="276" lemma="1940" pos="1122" order="0"/>
+    <type7:Token xmi:id="759" sofa="17" begin="277" end="286" lemma="1945" pos="1128" order="0"/>
+    <type7:Token xmi:id="772" sofa="17" begin="287" end="291" lemma="1950" pos="1134" order="0"/>
+    <type7:Token xmi:id="785" sofa="17" begin="291" end="292" lemma="1955" pos="1140" order="0"/>
+    <pos:POS_PROPN xmi:id="798" sofa="17" begin="0" end="7" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="804" sofa="17" begin="8" end="16" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="810" sofa="17" begin="17" end="19" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="846" sofa="17" begin="51" end="53" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="882" sofa="17" begin="74" end="82" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="894" sofa="17" begin="86" end="90" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="924" sofa="17" begin="111" end="115" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="966" sofa="17" begin="150" end="154" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="972" sofa="17" begin="155" end="160" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="1026" sofa="17" begin="192" end="198" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="1098" sofa="17" begin="260" end="262" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="1104" sofa="17" begin="263" end="270" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="1128" sofa="17" begin="277" end="286" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PROPN xmi:id="1134" sofa="17" begin="287" end="291" PosValue="NNP" coarseValue="PROPN"/>
+    <pos:POS_PUNCT xmi:id="816" sofa="17" begin="19" end="20" PosValue=":" coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="870" sofa="17" begin="68" end="69" PosValue="," coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="900" sofa="17" begin="90" end="91" PosValue="," coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="936" sofa="17" begin="125" end="126" PosValue="," coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="978" sofa="17" begin="160" end="161" PosValue="," coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="1044" sofa="17" begin="214" end="215" PosValue="," coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="1068" sofa="17" begin="243" end="244" PosValue="," coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="1086" sofa="17" begin="257" end="258" PosValue="." coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="1092" sofa="17" begin="259" end="260" PosValue="-LRB-" coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="1110" sofa="17" begin="270" end="271" PosValue="-RRB-" coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="1116" sofa="17" begin="272" end="273" PosValue="-LRB-" coarseValue="PUNCT"/>
+    <pos:POS_PUNCT xmi:id="1140" sofa="17" begin="291" end="292" PosValue="-RRB-" coarseValue="PUNCT"/>
+    <pos:POS_ADJ xmi:id="822" sofa="17" begin="21" end="26" PosValue="JJ" coarseValue="ADJ"/>
+    <pos:POS_NOUN xmi:id="828" sofa="17" begin="27" end="38" PosValue="NNS" coarseValue="NOUN"/>
+    <pos:POS_NOUN xmi:id="864" sofa="17" begin="62" end="68" PosValue="NN" coarseValue="NOUN"/>
+    <pos:POS_NOUN xmi:id="912" sofa="17" begin="101" end="107" PosValue="NNS" coarseValue="NOUN"/>
+    <pos:POS_NOUN xmi:id="930" sofa="17" begin="116" end="125" PosValue="NNS" coarseValue="NOUN"/>
+    <pos:POS_NOUN xmi:id="1014" sofa="17" begin="184" end="188" PosValue="NN" coarseValue="NOUN"/>
+    <pos:POS_NOUN xmi:id="1038" sofa="17" begin="205" end="214" PosValue="NNS" coarseValue="NOUN"/>
+    <pos:POS_NOUN xmi:id="1062" sofa="17" begin="236" end="243" PosValue="NNS" coarseValue="NOUN"/>
+    <pos:POS_VERB xmi:id="834" sofa="17" begin="39" end="48" PosValue="VBD" coarseValue="VERB"/>
+    <pos:POS_VERB xmi:id="858" sofa="17" begin="54" end="61" PosValue="VBN" coarseValue="VERB"/>
+    <pos:POS_VERB xmi:id="906" sofa="17" begin="92" end="100" PosValue="VBG" coarseValue="VERB"/>
+    <pos:POS_VERB xmi:id="948" sofa="17" begin="132" end="141" PosValue="VBG" coarseValue="VERB"/>
+    <pos:POS_VERB xmi:id="984" sofa="17" begin="162" end="168" PosValue="VBG" coarseValue="VERB"/>
+    <pos:POS_VERB xmi:id="1056" sofa="17" begin="227" end="235" PosValue="VBG" coarseValue="VERB"/>
+    <pos:POS_VERB xmi:id="1074" sofa="17" begin="245" end="254" PosValue="VB" coarseValue="VERB"/>
+    <pos:POS_DET xmi:id="840" sofa="17" begin="49" end="50" PosValue="DT" coarseValue="DET"/>
+    <pos:POS_DET xmi:id="876" sofa="17" begin="70" end="73" PosValue="DT" coarseValue="DET"/>
+    <pos:POS_DET xmi:id="960" sofa="17" begin="146" end="149" PosValue="DT" coarseValue="DET"/>
+    <pos:POS_DET xmi:id="1008" sofa="17" begin="180" end="183" PosValue="DT" coarseValue="DET"/>
+    <pos:POS_DET xmi:id="1122" sofa="17" begin="273" end="276" PosValue="DT" coarseValue="DET"/>
+    <pos:POS xmi:id="852" sofa="17" begin="53" end="54" PosValue="HYPH"/>
+    <pos:POS_ADP xmi:id="888" sofa="17" begin="83" end="85" PosValue="IN" coarseValue="ADP"/>
+    <pos:POS_ADP xmi:id="918" sofa="17" begin="108" end="110" PosValue="IN" coarseValue="ADP"/>
+    <pos:POS_ADP xmi:id="942" sofa="17" begin="127" end="131" PosValue="IN" coarseValue="ADP"/>
+    <pos:POS_ADP xmi:id="954" sofa="17" begin="142" end="145" PosValue="IN" coarseValue="ADP"/>
+    <pos:POS_ADP xmi:id="1002" sofa="17" begin="177" end="179" PosValue="IN" coarseValue="ADP"/>
+    <pos:POS_ADP xmi:id="1020" sofa="17" begin="189" end="191" PosValue="IN" coarseValue="ADP"/>
+    <pos:POS_ADP xmi:id="1032" sofa="17" begin="199" end="204" PosValue="IN" coarseValue="ADP"/>
+    <pos:POS_PRON xmi:id="990" sofa="17" begin="169" end="171" PosValue="PRP" coarseValue="PRON"/>
+    <pos:POS_PRON xmi:id="1080" sofa="17" begin="255" end="257" PosValue="PRP" coarseValue="PRON"/>
+    <pos:POS_ADV xmi:id="996" sofa="17" begin="172" end="176" PosValue="RB" coarseValue="ADV"/>
+    <pos:POS_ADV xmi:id="1050" sofa="17" begin="216" end="226" PosValue="RB" coarseValue="ADV"/>
+    <dependency:Dependency xmi:id="1146" sofa="17" begin="0" end="7" Governor="70" Dependent="44" DependencyType="COMPOUND" flavor="basic"/>
+    <dependency:Dependency xmi:id="1154" sofa="17" begin="8" end="16" Governor="70" Dependent="57" DependencyType="COMPOUND" flavor="basic"/>
+    <dependency:Dependency xmi:id="1170" sofa="17" begin="19" end="20" Governor="122" Dependent="83" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1178" sofa="17" begin="21" end="26" Governor="109" Dependent="96" DependencyType="AMOD" flavor="basic"/>
+    <dependency:Dependency xmi:id="1186" sofa="17" begin="27" end="38" Governor="122" Dependent="109" DependencyType="NSUBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1202" sofa="17" begin="49" end="50" Governor="187" Dependent="135" DependencyType="DET" flavor="basic"/>
+    <dependency:Dependency xmi:id="1210" sofa="17" begin="51" end="53" Governor="174" Dependent="148" DependencyType="NPADVMOD" flavor="basic"/>
+    <dependency:Dependency xmi:id="1218" sofa="17" begin="53" end="54" Governor="174" Dependent="161" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1226" sofa="17" begin="54" end="61" Governor="187" Dependent="174" DependencyType="AMOD" flavor="basic"/>
+    <dependency:Dependency xmi:id="1234" sofa="17" begin="62" end="68" Governor="122" Dependent="187" DependencyType="DOBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1242" sofa="17" begin="68" end="69" Governor="187" Dependent="200" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1250" sofa="17" begin="70" end="73" Governor="226" Dependent="213" DependencyType="DET" flavor="basic"/>
+    <dependency:Dependency xmi:id="1258" sofa="17" begin="74" end="82" Governor="187" Dependent="226" DependencyType="APPOS" flavor="basic"/>
+    <dependency:Dependency xmi:id="1266" sofa="17" begin="83" end="85" Governor="226" Dependent="239" DependencyType="PREP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1274" sofa="17" begin="86" end="90" Governor="239" Dependent="252" DependencyType="POBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1282" sofa="17" begin="90" end="91" Governor="226" Dependent="265" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1290" sofa="17" begin="92" end="100" Governor="226" Dependent="278" DependencyType="ACL" flavor="basic"/>
+    <dependency:Dependency xmi:id="1298" sofa="17" begin="101" end="107" Governor="278" Dependent="291" DependencyType="DOBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1306" sofa="17" begin="108" end="110" Governor="291" Dependent="304" DependencyType="PREP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1314" sofa="17" begin="111" end="115" Governor="330" Dependent="317" DependencyType="COMPOUND" flavor="basic"/>
+    <dependency:Dependency xmi:id="1322" sofa="17" begin="116" end="125" Governor="304" Dependent="330" DependencyType="POBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1330" sofa="17" begin="125" end="126" Governor="122" Dependent="343" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1338" sofa="17" begin="127" end="131" Governor="122" Dependent="356" DependencyType="PREP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1346" sofa="17" begin="132" end="141" Governor="356" Dependent="369" DependencyType="PCOMP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1354" sofa="17" begin="142" end="145" Governor="369" Dependent="382" DependencyType="PREP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1362" sofa="17" begin="146" end="149" Governor="421" Dependent="395" DependencyType="DET" flavor="basic"/>
+    <dependency:Dependency xmi:id="1370" sofa="17" begin="150" end="154" Governor="421" Dependent="408" DependencyType="COMPOUND" flavor="basic"/>
+    <dependency:Dependency xmi:id="1378" sofa="17" begin="155" end="160" Governor="382" Dependent="421" DependencyType="POBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1386" sofa="17" begin="160" end="161" Governor="122" Dependent="434" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1394" sofa="17" begin="162" end="168" Governor="122" Dependent="447" DependencyType="ADVCL" flavor="basic"/>
+    <dependency:Dependency xmi:id="1402" sofa="17" begin="169" end="171" Governor="447" Dependent="460" DependencyType="DOBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1410" sofa="17" begin="172" end="176" Governor="447" Dependent="473" DependencyType="ADVMOD" flavor="basic"/>
+    <dependency:Dependency xmi:id="1418" sofa="17" begin="177" end="179" Governor="473" Dependent="486" DependencyType="PREP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1426" sofa="17" begin="180" end="183" Governor="512" Dependent="499" DependencyType="DET" flavor="basic"/>
+    <dependency:Dependency xmi:id="1434" sofa="17" begin="184" end="188" Governor="486" Dependent="512" DependencyType="POBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1442" sofa="17" begin="189" end="191" Governor="512" Dependent="525" DependencyType="PREP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1450" sofa="17" begin="192" end="198" Governor="525" Dependent="538" DependencyType="POBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1458" sofa="17" begin="199" end="204" Governor="447" Dependent="551" DependencyType="PREP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1466" sofa="17" begin="205" end="214" Governor="551" Dependent="564" DependencyType="POBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1474" sofa="17" begin="214" end="215" Governor="447" Dependent="577" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1482" sofa="17" begin="216" end="226" Governor="603" Dependent="590" DependencyType="ADVMOD" flavor="basic"/>
+    <dependency:Dependency xmi:id="1490" sofa="17" begin="227" end="235" Governor="447" Dependent="603" DependencyType="ADVCL" flavor="basic"/>
+    <dependency:Dependency xmi:id="1498" sofa="17" begin="236" end="243" Governor="603" Dependent="616" DependencyType="DOBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1506" sofa="17" begin="243" end="244" Governor="447" Dependent="629" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1514" sofa="17" begin="245" end="254" Governor="447" Dependent="642" DependencyType="CONJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1522" sofa="17" begin="255" end="257" Governor="642" Dependent="655" DependencyType="DOBJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1530" sofa="17" begin="257" end="258" Governor="122" Dependent="668" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1538" sofa="17" begin="259" end="260" Governor="707" Dependent="681" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1546" sofa="17" begin="260" end="262" Governor="707" Dependent="694" DependencyType="COMPOUND" flavor="basic"/>
+    <dependency:Dependency xmi:id="1562" sofa="17" begin="270" end="271" Governor="707" Dependent="720" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1570" sofa="17" begin="272" end="273" Governor="772" Dependent="733" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:Dependency xmi:id="1578" sofa="17" begin="273" end="276" Governor="772" Dependent="746" DependencyType="DET" flavor="basic"/>
+    <dependency:Dependency xmi:id="1586" sofa="17" begin="277" end="286" Governor="772" Dependent="759" DependencyType="COMPOUND" flavor="basic"/>
+    <dependency:Dependency xmi:id="1602" sofa="17" begin="291" end="292" Governor="772" Dependent="785" DependencyType="PUNCT" flavor="basic"/>
+    <dependency:ROOT xmi:id="1162" sofa="17" begin="17" end="19" Governor="70" Dependent="70" DependencyType="--" flavor="basic"/>
+    <dependency:ROOT xmi:id="1194" sofa="17" begin="39" end="48" Governor="122" Dependent="122" DependencyType="--" flavor="basic"/>
+    <dependency:ROOT xmi:id="1554" sofa="17" begin="263" end="270" Governor="707" Dependent="707" DependencyType="--" flavor="basic"/>
+    <dependency:ROOT xmi:id="1594" sofa="17" begin="287" end="291" Governor="772" Dependent="772" DependencyType="--" flavor="basic"/>
+    <type6:NamedEntity xmi:id="1610" sofa="17" begin="21" end="26" value="NORP"/>
+    <type6:NamedEntity xmi:id="1616" sofa="17" begin="51" end="53" value="GPE"/>
+    <type6:NamedEntity xmi:id="1622" sofa="17" begin="70" end="90" value="ORG"/>
+    <type6:NamedEntity xmi:id="1628" sofa="17" begin="101" end="107" value="CARDINAL"/>
+    <type6:NamedEntity xmi:id="1634" sofa="17" begin="111" end="115" value="GPE"/>
+    <type6:NamedEntity xmi:id="1640" sofa="17" begin="146" end="160" value="GPE"/>
+    <type6:NamedEntity xmi:id="1646" sofa="17" begin="192" end="198" value="PERSON"/>
+    <type6:NamedEntity xmi:id="1652" sofa="17" begin="260" end="270" value="ORG"/>
+    <type6:NamedEntity xmi:id="1658" sofa="17" begin="273" end="291" value="ORG"/>
+    <type7:Paragraph xmi:id="1664" sofa="17" begin="0" end="292"/>
+    <type7:Lemma xmi:id="1670" sofa="17" begin="0" end="7" value="freedom"/>
+    <type7:Lemma xmi:id="1675" sofa="17" begin="8" end="16" value="flotilla"/>
+    <type7:Lemma xmi:id="1680" sofa="17" begin="17" end="19" value="II"/>
+    <type7:Lemma xmi:id="1685" sofa="17" begin="19" end="20" value=":"/>
+    <type7:Lemma xmi:id="1690" sofa="17" begin="21" end="26" value="Greek"/>
+    <type7:Lemma xmi:id="1695" sofa="17" begin="27" end="38" value="authority"/>
+    <type7:Lemma xmi:id="1700" sofa="17" begin="39" end="48" value="prevent"/>
+    <type7:Lemma xmi:id="1705" sofa="17" begin="49" end="50" value="a"/>
+    <type7:Lemma xmi:id="1710" sofa="17" begin="51" end="53" value="US"/>
+    <type7:Lemma xmi:id="1715" sofa="17" begin="53" end="54" value="-"/>
+    <type7:Lemma xmi:id="1720" sofa="17" begin="54" end="61" value="flag"/>
+    <type7:Lemma xmi:id="1725" sofa="17" begin="62" end="68" value="vessel"/>
+    <type7:Lemma xmi:id="1730" sofa="17" begin="68" end="69" value=","/>
+    <type7:Lemma xmi:id="1735" sofa="17" begin="70" end="73" value="the"/>
+    <type7:Lemma xmi:id="1740" sofa="17" begin="74" end="82" value="audacity"/>
+    <type7:Lemma xmi:id="1745" sofa="17" begin="83" end="85" value="of"/>
+    <type7:Lemma xmi:id="1750" sofa="17" begin="86" end="90" value="Hope"/>
+    <type7:Lemma xmi:id="1755" sofa="17" begin="90" end="91" value=","/>
+    <type7:Lemma xmi:id="1760" sofa="17" begin="92" end="100" value="carry"/>
+    <type7:Lemma xmi:id="1765" sofa="17" begin="101" end="107" value="dozen"/>
+    <type7:Lemma xmi:id="1770" sofa="17" begin="108" end="110" value="of"/>
+    <type7:Lemma xmi:id="1775" sofa="17" begin="111" end="115" value="u.s."/>
+    <type7:Lemma xmi:id="1780" sofa="17" begin="116" end="125" value="activist"/>
+    <type7:Lemma xmi:id="1785" sofa="17" begin="125" end="126" value=","/>
+    <type7:Lemma xmi:id="1790" sofa="17" begin="127" end="131" value="from"/>
+    <type7:Lemma xmi:id="1795" sofa="17" begin="132" end="141" value="depart"/>
+    <type7:Lemma xmi:id="1800" sofa="17" begin="142" end="145" value="for"/>
+    <type7:Lemma xmi:id="1805" sofa="17" begin="146" end="149" value="the"/>
+    <type7:Lemma xmi:id="1810" sofa="17" begin="150" end="154" value="Gaza"/>
+    <type7:Lemma xmi:id="1815" sofa="17" begin="155" end="160" value="strip"/>
+    <type7:Lemma xmi:id="1820" sofa="17" begin="160" end="161" value=","/>
+    <type7:Lemma xmi:id="1825" sofa="17" begin="162" end="168" value="tow"/>
+    <type7:Lemma xmi:id="1830" sofa="17" begin="169" end="171" value="it"/>
+    <type7:Lemma xmi:id="1835" sofa="17" begin="172" end="176" value="back"/>
+    <type7:Lemma xmi:id="1840" sofa="17" begin="177" end="179" value="to"/>
+    <type7:Lemma xmi:id="1845" sofa="17" begin="180" end="183" value="the"/>
+    <type7:Lemma xmi:id="1850" sofa="17" begin="184" end="188" value="port"/>
+    <type7:Lemma xmi:id="1855" sofa="17" begin="189" end="191" value="of"/>
+    <type7:Lemma xmi:id="1860" sofa="17" begin="192" end="198" value="Perama"/>
+    <type7:Lemma xmi:id="1865" sofa="17" begin="199" end="204" value="after"/>
+    <type7:Lemma xmi:id="1870" sofa="17" begin="205" end="214" value="commando"/>
+    <type7:Lemma xmi:id="1875" sofa="17" begin="214" end="215" value=","/>
+    <type7:Lemma xmi:id="1880" sofa="17" begin="216" end="226" value="reportedly"/>
+    <type7:Lemma xmi:id="1885" sofa="17" begin="227" end="235" value="carry"/>
+    <type7:Lemma xmi:id="1890" sofa="17" begin="236" end="243" value="weapon"/>
+    <type7:Lemma xmi:id="1895" sofa="17" begin="243" end="244" value=","/>
+    <type7:Lemma xmi:id="1900" sofa="17" begin="245" end="254" value="intercept"/>
+    <type7:Lemma xmi:id="1905" sofa="17" begin="255" end="257" value="it"/>
+    <type7:Lemma xmi:id="1910" sofa="17" begin="257" end="258" value="."/>
+    <type7:Lemma xmi:id="1915" sofa="17" begin="259" end="260" value="("/>
+    <type7:Lemma xmi:id="1920" sofa="17" begin="260" end="262" value="Al"/>
+    <type7:Lemma xmi:id="1925" sofa="17" begin="263" end="270" value="Jazeera"/>
+    <type7:Lemma xmi:id="1930" sofa="17" begin="270" end="271" value=")"/>
+    <type7:Lemma xmi:id="1935" sofa="17" begin="272" end="273" value="("/>
+    <type7:Lemma xmi:id="1940" sofa="17" begin="273" end="276" value="the"/>
+    <type7:Lemma xmi:id="1945" sofa="17" begin="277" end="286" value="Jerusalem"/>
+    <type7:Lemma xmi:id="1950" sofa="17" begin="287" end="291" value="Post"/>
+    <type7:Lemma xmi:id="1955" sofa="17" begin="291" end="292" value=")"/>
+    <category:CategoryCoveredTagged xmi:id="1960" sofa="17" begin="0" end="292" value="__label_ddc__620" score="0.662109" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="1968" sofa="17" begin="0" end="292" value="__label_ddc__360" score="0.292969" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="1976" sofa="17" begin="0" end="292" value="__label_ddc__350" score="0.0214844" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="1984" sofa="17" begin="0" end="292" value="__label_ddc__380" score="0.0117188" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="1992" sofa="17" begin="0" end="292" value="__label_ddc__950" score="0.00195314" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2000" sofa="17" begin="0" end="292" value="__label_ddc__780" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2008" sofa="17" begin="0" end="292" value="__label_ddc__340" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2016" sofa="17" begin="0" end="292" value="__label_ddc__300" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2024" sofa="17" begin="0" end="292" value="__label_ddc__000" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2032" sofa="17" begin="0" end="292" value="__label_ddc__650" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2040" sofa="17" begin="0" end="292" value="__label_ddc__570" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2048" sofa="17" begin="0" end="292" value="__label_ddc__330" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2056" sofa="17" begin="0" end="292" value="__label_ddc__370" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2064" sofa="17" begin="0" end="292" value="__label_ddc__170" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2072" sofa="17" begin="0" end="292" value="__label_ddc__580" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2080" sofa="17" begin="0" end="292" value="__label_ddc__720" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2088" sofa="17" begin="0" end="292" value="__label_ddc__550" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2096" sofa="17" begin="0" end="292" value="__label_ddc__150" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2104" sofa="17" begin="0" end="292" value="__label_ddc__120" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2112" sofa="17" begin="0" end="292" value="__label_ddc__680" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2120" sofa="17" begin="0" end="292" value="__label_ddc__530" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2128" sofa="17" begin="0" end="292" value="__label_ddc__320" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2136" sofa="17" begin="0" end="292" value="__label_ddc__640" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2144" sofa="17" begin="0" end="292" value="__label_ddc__390" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2152" sofa="17" begin="0" end="292" value="__label_ddc__520" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2160" sofa="17" begin="0" end="292" value="__label_ddc__660" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2168" sofa="17" begin="0" end="292" value="__label_ddc__630" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2176" sofa="17" begin="0" end="292" value="__label_ddc__210" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2184" sofa="17" begin="0" end="292" value="__label_ddc__410" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2192" sofa="17" begin="0" end="292" value="__label_ddc__090" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2200" sofa="17" begin="0" end="292" value="__label_ddc__690" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2208" sofa="17" begin="0" end="292" value="__label_ddc__260" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2216" sofa="17" begin="0" end="292" value="__label_ddc__740" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2224" sofa="17" begin="0" end="292" value="__label_ddc__800" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2232" sofa="17" begin="0" end="292" value="__label_ddc__730" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2240" sofa="17" begin="0" end="292" value="__label_ddc__130" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2248" sofa="17" begin="0" end="292" value="__label_ddc__230" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2256" sofa="17" begin="0" end="292" value="__label_ddc__700" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2264" sofa="17" begin="0" end="292" value="__label_ddc__670" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2272" sofa="17" begin="0" end="292" value="__label_ddc__990" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2280" sofa="17" begin="0" end="292" value="__label_ddc__910" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2288" sofa="17" begin="0" end="292" value="__label_ddc__240" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2296" sofa="17" begin="0" end="292" value="__label_ddc__020" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2304" sofa="17" begin="0" end="292" value="__label_ddc__920" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2312" sofa="17" begin="0" end="292" value="__label_ddc__930" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2320" sofa="17" begin="0" end="292" value="__label_ddc__710" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2328" sofa="17" begin="0" end="292" value="__label_ddc__560" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2336" sofa="17" begin="0" end="292" value="__label_ddc__270" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2344" sofa="17" begin="0" end="292" value="__label_ddc__400" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2352" sofa="17" begin="0" end="292" value="__label_ddc__140" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2360" sofa="17" begin="0" end="292" value="__label_ddc__280" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2368" sofa="17" begin="0" end="292" value="__label_ddc__490" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2376" sofa="17" begin="0" end="292" value="__label_ddc__070" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2384" sofa="17" begin="0" end="292" value="__label_ddc__770" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2392" sofa="17" begin="0" end="292" value="__label_ddc__510" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2400" sofa="17" begin="0" end="292" value="__label_ddc__290" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2408" sofa="17" begin="0" end="292" value="__label_ddc__250" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2416" sofa="17" begin="0" end="292" value="__label_ddc__760" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2424" sofa="17" begin="0" end="292" value="__label_ddc__940" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2432" sofa="17" begin="0" end="292" value="__label_ddc__110" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2440" sofa="17" begin="0" end="292" value="__label_ddc__890" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2448" sofa="17" begin="0" end="292" value="__label_ddc__160" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2456" sofa="17" begin="0" end="292" value="__label_ddc__750" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2464" sofa="17" begin="0" end="292" value="__label_ddc__060" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2472" sofa="17" begin="0" end="292" value="__label_ddc__970" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2480" sofa="17" begin="0" end="292" value="__label_ddc__830" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2488" sofa="17" begin="0" end="292" value="__label_ddc__010" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2496" sofa="17" begin="0" end="292" value="__label_ddc__180" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2504" sofa="17" begin="0" end="292" value="__label_ddc__600" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2512" sofa="17" begin="0" end="292" value="__label_ddc__220" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2520" sofa="17" begin="0" end="292" value="__label_ddc__430" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2528" sofa="17" begin="0" end="292" value="__label_ddc__960" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2536" sofa="17" begin="0" end="292" value="__label_ddc__420" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2544" sofa="17" begin="0" end="292" value="__label_ddc__840" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2552" sofa="17" begin="0" end="292" value="__label_ddc__050" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2560" sofa="17" begin="0" end="292" value="__label_ddc__190" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2568" sofa="17" begin="0" end="292" value="__label_ddc__100" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2576" sofa="17" begin="0" end="292" value="__label_ddc__080" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2584" sofa="17" begin="0" end="292" value="__label_ddc__470" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2592" sofa="17" begin="0" end="292" value="__label_ddc__030" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2600" sofa="17" begin="0" end="292" value="__label_ddc__820" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2608" sofa="17" begin="0" end="292" value="__label_ddc__500" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2616" sofa="17" begin="0" end="292" value="__label_ddc__860" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2624" sofa="17" begin="0" end="292" value="__label_ddc__810" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2632" sofa="17" begin="0" end="292" value="__label_ddc__880" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2640" sofa="17" begin="0" end="292" value="__label_ddc__480" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2648" sofa="17" begin="0" end="292" value="__label_ddc__310" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2656" sofa="17" begin="0" end="292" value="__label_ddc__980" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2664" sofa="17" begin="0" end="292" value="__label_ddc__440" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2672" sofa="17" begin="0" end="292" value="__label_ddc__900" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2680" sofa="17" begin="0" end="292" value="__label_ddc__200" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2688" sofa="17" begin="0" end="292" value="__label_ddc__540" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2696" sofa="17" begin="0" end="292" value="__label_ddc__590" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2704" sofa="17" begin="0" end="292" value="__label_ddc__790" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2712" sofa="17" begin="0" end="292" value="__label_ddc__610" score="1.95313E-8" tags="ddc2"/>
+    <category:CategoryCoveredTagged xmi:id="2720" sofa="17" begin="0" end="292" value="__dewiki__242361" score="0.490234" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2728" sofa="17" begin="0" end="292" value="__dewiki__233544" score="0.230469" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2736" sofa="17" begin="0" end="292" value="__dewiki__242649" score="0.125" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2744" sofa="17" begin="0" end="292" value="__dewiki__7814709" score="0.0703125" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2752" sofa="17" begin="0" end="292" value="__dewiki__242359" score="0.0117188" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2760" sofa="17" begin="0" end="292" value="__dewiki__242432" score="0.00976564" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2768" sofa="17" begin="0" end="292" value="__dewiki__242646" score="0.00976564" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2776" sofa="17" begin="0" end="292" value="__dewiki__1335049" score="0.00585939" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2784" sofa="17" begin="0" end="292" value="__dewiki__242612" score="0.00585939" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2792" sofa="17" begin="0" end="292" value="__dewiki__243014" score="0.00585939" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2800" sofa="17" begin="0" end="292" value="__dewiki__242652" score="0.00390627" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2808" sofa="17" begin="0" end="292" value="__dewiki__242651" score="0.00390627" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2816" sofa="17" begin="0" end="292" value="__dewiki__242618" score="0.00195314" tags="text2cwc_raum"/>
+    <category:CategoryCoveredTagged xmi:id="2824" sofa="17" begin="0" end="292" value="__dewiki__236159" score="0.134766" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2832" sofa="17" begin="0" end="292" value="__dewiki__2263469" score="0.0839844" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2840" sofa="17" begin="0" end="292" value="__dewiki__9064985" score="0.0722656" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2848" sofa="17" begin="0" end="292" value="__dewiki__333327" score="0.0507813" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2856" sofa="17" begin="0" end="292" value="__dewiki__7539311" score="0.0429688" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2864" sofa="17" begin="0" end="292" value="__dewiki__9064973" score="0.0410156" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2872" sofa="17" begin="0" end="292" value="__dewiki__5410765" score="0.0371094" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2880" sofa="17" begin="0" end="292" value="__dewiki__241639" score="0.0371094" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2888" sofa="17" begin="0" end="292" value="__dewiki__5650140" score="0.0371094" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2896" sofa="17" begin="0" end="292" value="__dewiki__494487" score="0.0332031" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2904" sofa="17" begin="0" end="292" value="__dewiki__437014" score="0.0292969" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2912" sofa="17" begin="0" end="292" value="__dewiki__236640" score="0.0175781" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2920" sofa="17" begin="0" end="292" value="__dewiki__2273788" score="0.015625" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2928" sofa="17" begin="0" end="292" value="__dewiki__667132" score="0.015625" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2936" sofa="17" begin="0" end="292" value="__dewiki__8993188" score="0.0136719" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2944" sofa="17" begin="0" end="292" value="__dewiki__2176221" score="0.0136719" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2952" sofa="17" begin="0" end="292" value="__dewiki__242722" score="0.0136719" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2960" sofa="17" begin="0" end="292" value="__dewiki__9738912" score="0.0117188" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2968" sofa="17" begin="0" end="292" value="__dewiki__8383017" score="0.00976564" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2976" sofa="17" begin="0" end="292" value="__dewiki__242544" score="0.00781252" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2984" sofa="17" begin="0" end="292" value="__dewiki__494277" score="0.00781252" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="2992" sofa="17" begin="0" end="292" value="__dewiki__373686" score="0.00781252" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3000" sofa="17" begin="0" end="292" value="__dewiki__671464" score="0.00781252" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3008" sofa="17" begin="0" end="292" value="__dewiki__224908" score="0.00781252" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3016" sofa="17" begin="0" end="292" value="__dewiki__462471" score="0.00585939" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3024" sofa="17" begin="0" end="292" value="__dewiki__381787" score="0.00585939" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3032" sofa="17" begin="0" end="292" value="__dewiki__242681" score="0.00585939" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3040" sofa="17" begin="0" end="292" value="__dewiki__236156" score="0.00585939" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3048" sofa="17" begin="0" end="292" value="__dewiki__5690136" score="0.00585939" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3056" sofa="17" begin="0" end="292" value="__dewiki__1055043" score="0.00390627" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3064" sofa="17" begin="0" end="292" value="__dewiki__6853459" score="0.00390627" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3072" sofa="17" begin="0" end="292" value="__dewiki__9724770" score="0.00390627" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3080" sofa="17" begin="0" end="292" value="__dewiki__6546265" score="0.00390627" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3088" sofa="17" begin="0" end="292" value="__dewiki__416399" score="0.00390627" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3096" sofa="17" begin="0" end="292" value="__dewiki__8050071" score="0.00390627" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3104" sofa="17" begin="0" end="292" value="__dewiki__236153" score="0.00390627" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3112" sofa="17" begin="0" end="292" value="__dewiki__1944502" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3120" sofa="17" begin="0" end="292" value="__dewiki__1742458" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3128" sofa="17" begin="0" end="292" value="__dewiki__8626034" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3136" sofa="17" begin="0" end="292" value="__dewiki__669187" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3144" sofa="17" begin="0" end="292" value="__dewiki__4922975" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3152" sofa="17" begin="0" end="292" value="__dewiki__429356" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3160" sofa="17" begin="0" end="292" value="__dewiki__1944488" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3168" sofa="17" begin="0" end="292" value="__dewiki__1654768" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3176" sofa="17" begin="0" end="292" value="__dewiki__1603607" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3184" sofa="17" begin="0" end="292" value="__dewiki__8457110" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3192" sofa="17" begin="0" end="292" value="__dewiki__235360" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3200" sofa="17" begin="0" end="292" value="__dewiki__452539" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3208" sofa="17" begin="0" end="292" value="__dewiki__10087414" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3216" sofa="17" begin="0" end="292" value="__dewiki__8626040" score="0.00195314" tags="text2cwc_thema"/>
+    <category:CategoryCoveredTagged xmi:id="3224" sofa="17" begin="0" end="292" value="__dewiki__288287" score="0.351563" tags="text2cwc_zeit"/>
+    <category:CategoryCoveredTagged xmi:id="3232" sofa="17" begin="0" end="292" value="__dewiki__288291" score="0.347656" tags="text2cwc_zeit"/>
+    <category:CategoryCoveredTagged xmi:id="3240" sofa="17" begin="0" end="292" value="__dewiki__882654" score="0.199219" tags="text2cwc_zeit"/>
+    <category:CategoryCoveredTagged xmi:id="3248" sofa="17" begin="0" end="292" value="__dewiki__485230" score="0.0527344" tags="text2cwc_zeit"/>
+    <category:CategoryCoveredTagged xmi:id="3256" sofa="17" begin="0" end="292" value="__dewiki__242052" score="0.0195313" tags="text2cwc_zeit"/>
+    <category:CategoryCoveredTagged xmi:id="3264" sofa="17" begin="0" end="292" value="__dewiki__283268" score="0.0136719" tags="text2cwc_zeit"/>
+    <category:CategoryCoveredTagged xmi:id="3272" sofa="17" begin="0" end="292" value="__dewiki__477688" score="0.00390627" tags="text2cwc_zeit"/>
+    <category:CategoryCoveredTagged xmi:id="3280" sofa="17" begin="0" end="292" value="__dewiki__477643" score="0.00195314" tags="text2cwc_zeit"/>
+    <type16:Sentiment xmi:id="3288" sofa="17" begin="0" end="19" sentiment="0.0" subjectivity="0.0"/>
+    <type16:Sentiment xmi:id="3294" sofa="17" begin="19" end="258" sentiment="0.0" subjectivity="0.0"/>
+    <type16:Sentiment xmi:id="3300" sofa="17" begin="259" end="271" sentiment="0.0" subjectivity="0.0"/>
+    <type16:Sentiment xmi:id="3306" sofa="17" begin="272" end="292" sentiment="0.0" subjectivity="0.0"/>
+    <cas:Sofa xmi:id="17" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="Freedom Flotilla II: Greek authorities prevented a US-flagged vessel, The Audacity of Hope, carrying dozens of U.S. activists, from departing for the Gaza Strip, towing it back to the port of Perama after commandos, reportedly carrying weapons, intercept it. (Al Jazeera) (The Jerusalem Post)"/>
+    <cas:View sofa="17" members="1 12 24 29 34 39 44 57 70 83 96 109 122 135 148 161 174 187 200 213 226 239 252 265 278 291 304 317 330 343 356 369 382 395 408 421 434 447 460 473 486 499 512 525 538 551 564 577 590 603 616 629 642 655 668 681 694 707 720 733 746 759 772 785 798 804 810 846 882 894 924 966 972 1026 1098 1104 1128 1134 816 870 900 936 978 1044 1068 1086 1092 1110 1116 1140 822 828 864 912 930 1014 1038 1062 834 858 906 948 984 1056 1074 840 876 960 1008 1122 852 888 918 942 954 1002 1020 1032 990 1080 996 1050 1146 1154 1170 1178 1186 1202 1210 1218 1226 1234 1242 1250 1258 1266 1274 1282 1290 1298 1306 1314 1322 1330 1338 1346 1354 1362 1370 1378 1386 1394 1402 1410 1418 1426 1434 1442 1450 1458 1466 1474 1482 1490 1498 1506 1514 1522 1530 1538 1546 1562 1570 1578 1586 1602 1162 1194 1554 1594 1610 1616 1622 1628 1634 1640 1646 1652 1658 1664 1670 1675 1680 1685 1690 1695 1700 1705 1710 1715 1720 1725 1730 1735 1740 1745 1750 1755 1760 1765 1770 1775 1780 1785 1790 1795 1800 1805 1810 1815 1820 1825 1830 1835 1840 1845 1850 1855 1860 1865 1870 1875 1880 1885 1890 1895 1900 1905 1910 1915 1920 1925 1930 1935 1940 1945 1950 1955 1960 1968 1976 1984 1992 2000 2008 2016 2024 2032 2040 2048 2056 2064 2072 2080 2088 2096 2104 2112 2120 2128 2136 2144 2152 2160 2168 2176 2184 2192 2200 2208 2216 2224 2232 2240 2248 2256 2264 2272 2280 2288 2296 2304 2312 2320 2328 2336 2344 2352 2360 2368 2376 2384 2392 2400 2408 2416 2424 2432 2440 2448 2456 2464 2472 2480 2488 2496 2504 2512 2520 2528 2536 2544 2552 2560 2568 2576 2584 2592 2600 2608 2616 2624 2632 2640 2648 2656 2664 2672 2680 2688 2696 2704 2712 2720 2728 2736 2744 2752 2760 2768 2776 2784 2792 2800 2808 2816 2824 2832 2840 2848 2856 2864 2872 2880 2888 2896 2904 2912 2920 2928 2936 2944 2952 2960 2968 2976 2984 2992 3000 3008 3016 3024 3032 3040 3048 3056 3064 3072 3080 3088 3096 3104 3112 3120 3128 3136 3144 3152 3160 3168 3176 3184 3192 3200 3208 3216 3224 3232 3240 3248 3256 3264 3272 3280 3288 3294 3300 3306"/>
+</xmi:XMI>
