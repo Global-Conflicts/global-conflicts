@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.map-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  background-color: #404C57;
+}
+
+.incident-list {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.incident-list__item {
+  display: flex;
+  flex-direction: row;
+  gap: .6rem;
+}
+
+.incident-list__item-timestamp {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: .3rem;
+  padding: .1rem .2rem;
+}
+
+.incident-list__item-preview {
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.timeline {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 25%;
+  height: 20%;
+  background-color: #404C57;
+}

@@ -1,50 +1,51 @@
-import * as Constants from '../constants'
-import data from '../data.json'
+import geodata from '../data.json';
 
-const options = [{
-  name: 'Population',
-  description: 'Estimated total population',
-  property: 'pop_est',
-  stops: [
-    [0, '#f8d5cc'],
-    [1000000, '#f4bfb6'],
-    [5000000, '#f1a8a5'],
-    [10000000, '#ee8f9a'],
-    [50000000, '#ec739b'],
-    [100000000, '#dd5ca8'],
-    [250000000, '#c44cc0'],
-    [500000000, '#9f43d7'],
-    [1000000000, '#6e40e6']
-  ]
-}, {
-  name: 'GDP',
-  description: 'Estimate total GDP in millions of dollars',
-  property: 'gdp_md_est',
-  stops: [
-    [0, '#f8d5cc'],
-    [1000, '#f4bfb6'],
-    [5000, '#f1a8a5'],
-    [10000, '#ee8f9a'],
-    [50000, '#ec739b'],
-    [100000, '#dd5ca8'],
-    [250000, '#c44cc0'],
-    [5000000, '#9f43d7'],
-    [10000000, '#6e40e6']
-  ]
-}]
-
-const initialState: State = {
-  data,
-  options,
-  active: options[0]
+const timeline = {
+  minDate: new Date('2010-01-01'),
+  maxDate: new Date(),
+  selectedStartDate: new Date(Date.now() - 1000 * 60 * 60 * 24 * 14),
+  selectedEndDate: new Date()
 };
 
-function reducer(state = initialState, action) {
+const regions = [
+  'Global',
+  'Europe',
+  'Germany',
+  'Russia',
+  'Middle East',
+  'Egypt'
+];
+
+const incidents = Array(40).fill(
+  {
+    id: 'dje5d5',
+    timestamp: new Date('2021-01-01'),
+    plaintext: '2014 pro-Russian unrest in Ukraine: An airstrike on the rebel-held town of Snizhne kills at least eleven civilians. (AP via Washington Post)',
+    richtext: '',
+    regions: ['Europe', 'Russia'],
+    link: 'https://en.wikipedia.org/wiki/Portal%3aCurrent_events/2012_November_25'
+  }
+);
+
+const initialState = {
+  geodata,
+  timeline,
+  incidents,
+  selectedIncident: incidents[0],
+  regions,
+  selectedRegion: regions[1]
+};
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case Constants.SET_ACTIVE_OPTION:
-      return Object.assign({}, state, {
-        active: action.option
-      });
+    case 'SET_REGION':
+      return { ...state, selectedRegion: action.region };
+    case 'SET_INCIDENT':
+      return { ...state, selectedIncident: action.incident };
+    case 'SET_TIMELINE_START':
+      return { ...state, timeline: { ...state.timeline, selectedStartDate: action.start } };
+    case 'SET_TIMELINE_END':
+      return { ...state, timeline: { ...state.timeline, selectedEndDate: action.end } };
     default:
       return state;
   }
