@@ -13,7 +13,11 @@ const useFilteredIncidents = () => {
   const selectedRegion = useSelector(selectSelectedRegion)
 
   const filteredIncidents = useMemo(() => {
-    const filter = (i) => (i.timestamp >= selectedStartDate && i.timestamp <= selectedEndDate);
+    const filter = (i) => (
+      i.timestamp >= selectedStartDate &&
+      i.timestamp <= selectedEndDate &&
+      i.regions.includes(selectedRegion)
+    );
     return incidents.filter(filter);
   }, [incidents, selectedStartDate, selectedEndDate, selectedRegion]);
 
