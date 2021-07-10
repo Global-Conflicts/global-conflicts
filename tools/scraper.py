@@ -21,7 +21,11 @@ def scrape_date(date):
     url = f'https://en.wikipedia.org/wiki/Portal%3aCurrent_events/{timestamp}?action=raw'
     page = requests.get(url)
     source = page.content.decode('utf-8')
-    output = json.dumps({'date': date.strftime('%Y-%m-%d'), 'source': source})
+    output = json.dumps({
+        'date': date.strftime('%Y-%m-%d'),
+        'source': source,
+        'url': url
+    })
     sys.stdout.write(output + '\n')
 
 if __name__ == "__main__":
