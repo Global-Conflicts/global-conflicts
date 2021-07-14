@@ -7,22 +7,13 @@ const timeline = {
   selectedEndDate: new Date()
 };
 
-const regions = [
-  'Global',
-  'Europe',
-  'Germany',
-  'Russia',
-  'Middle East',
-  'Egypt'
-];
-
 const incidents = Array(40).fill(
   {
     id: 'dje5d5',
     timestamp: new Date('2021-01-01'),
     plaintext: '2014 pro-Russian unrest in Ukraine: An airstrike on the rebel-held town of Snizhne kills at least eleven civilians. (AP via Washington Post)',
     richtext: '',
-    regions: ['Europe', 'Russia'],
+    regions: ['Russia'],
     link: 'https://en.wikipedia.org/wiki/Portal%3aCurrent_events/2012_November_25'
   }
 );
@@ -32,8 +23,7 @@ const initialState = {
   timeline,
   incidents,
   selectedIncident: incidents[0],
-  regions,
-  selectedRegion: regions[1]
+  selectedRegion: 'Global'
 };
 
 const reducer = (state = initialState, action) => {

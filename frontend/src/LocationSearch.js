@@ -1,8 +1,8 @@
 import React, { useMemo, useCallback } from 'react';
 import { useSelector } from 'react-redux'
 import { setRegion } from './redux/actions.js'
+import useRegionList from './redux/useRegionList.js'
 
-const selectRegions = state => state.regions;
 const selectSelectedRegion = state => state.selectedRegion;
 
 const sanitizeId = (str) => 
@@ -11,7 +11,7 @@ const sanitizeId = (str) =>
     .replace(/\.|%[0-9a-z]{2}/gi, '');
 
 const LocationSearch = () => {
-  const regions = useSelector(selectRegions)
+  const regions = useRegionList()
   const regionsWithIds = useMemo(() => 
     regions.map((region) => ({key: sanitizeId(region), value: region}))
   , [regions]);
