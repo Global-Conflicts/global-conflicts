@@ -5,25 +5,15 @@ import useRegionList from './redux/useRegionList.js'
 
 const selectSelectedRegion = state => state.selectedRegion;
 
-const sanitizeId = (str) => 
-  encodeURIComponent(str)
-    .toLowerCase()
-    .replace(/\.|%[0-9a-z]{2}/gi, '');
 
 const LocationSearch = () => {
   const regions = useRegionList()
-  const regionsWithIds = useMemo(() => 
-    regions.map((region) => ({key: sanitizeId(region), value: region}))
-  , [regions]);
   
   const selectedRegion = useSelector(selectSelectedRegion)
-  const selectedRegionId = useMemo(() => 
-    sanitizeId(selectedRegion)
-  , [selectedRegion]);
 
   const onChange = useCallback(({ target }) => {
     setRegion(target.value);
-  }, [regionsWithIds]);
+  }, []);
 
   return (
     <div className="location">
@@ -31,12 +21,12 @@ const LocationSearch = () => {
       <select 
         id="location"
         className="location__select"
-        value={ selectedRegionId }
+        value={ selectedRegion }
         onChange={ onChange }
       >
         {
-          regionsWithIds.map(region => 
-            <option value={region.key} value={region.key}>{region.value}</option>)
+          regions.map(region => 
+            <option key={region.key} value={region.key}>{region.value}</option>)
         }
       </select>
     </div>

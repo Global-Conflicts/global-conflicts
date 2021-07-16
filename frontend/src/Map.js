@@ -7,6 +7,8 @@ import React, {
 import mapboxgl from 'mapbox-gl';
 import { useSelector } from 'react-redux'
 import { setRegion } from './redux/actions.js'
+import useIncidentMarkers from './redux/useIncidentMarkers.js'
+import sanitizeId from './redux/sanitizeId.js'
 
 const selectGeodata = state => state.geodata;
 
@@ -18,10 +20,12 @@ const Map = () => {
   const [map, setMap] = useState(null);
 
   const geodata = useSelector(selectGeodata)
+  const incidentMarkers = useIncidentMarkers();
 
   const onCountryClick = useCallback((e) => {
     const country = e.features[0].properties.name
-    setRegion(country);
+    const countryId = sanitizeId(country);
+    setRegion(countryId);
   }, [setRegion]);
 
   useEffect(() => {
@@ -56,8 +60,27 @@ const Map = () => {
         'country-label'
       );
 
+      map.addSource('incidents', {
+        type: 'geojson',
+        data: incidentMarkers
+      });
+
+      console.log(incidentMarkers);
+
+      map.addLayer({
+        id: 'incidents',
+        type: 'symbol',
+        source: 'incidents',
+        layout: {
+          'icon-image': '{icon}',
+          'icon-allow-overlap': true
+        }
+      });
+
+
       // https://github.com/mapbox/mapbox-react-examples/tree/master/data-overlay-redux/src
       // https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
+      // https://docs.mapbox.com/mapbox-gl-js/example/live-update-feature/
       /*
         new mapboxgl.Popup()
           .setLngLat(coordinates)

@@ -27,7 +27,7 @@ function Timeline() {
     <div className="timeline">
       <input 
         type="date"
-        classname="timeline__start-date-picker" 
+        className="timeline__start-date-picker" 
         value={dateToTimestamp(startDate)}
         onChange={onStartDateChange}
         min={dateToTimestamp(minDate)} 
@@ -35,7 +35,7 @@ function Timeline() {
       />
       <input 
         type="date"
-        classname="timeline__end-date-picker" 
+        className="timeline__end-date-picker" 
         value={dateToTimestamp(endDate)}
         onChange={onEndDateChange}
         min={dateToTimestamp(startDate)} 

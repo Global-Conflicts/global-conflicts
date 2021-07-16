@@ -2,7 +2,6 @@ import React, { useCallback } from 'react';
 import { setRegion } from './redux/actions.js'
 import useFilteredIncidents from './redux/useFilteredIncidents.js'
 
-
 const IncidentListItem = ({ item }) => {
   return (
     <div className="incident-list__item">
