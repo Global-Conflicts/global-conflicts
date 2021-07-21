@@ -6,11 +6,12 @@ import React, {
 } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { useSelector } from 'react-redux'
-import { setRegion } from './redux/actions.js'
+import { setRegion, setIncident } from './redux/actions.js'
 import useIncidentMarkers from './redux/useIncidentMarkers.js'
 import sanitizeId from './redux/sanitizeId.js'
 
 const selectGeodata = state => state.geodata;
+const selectSelectedIncident = state => state.selectedIncident;
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
@@ -20,20 +21,45 @@ const Map = () => {
   const [map, setMap] = useState(null);
 
   const geodata = useSelector(selectGeodata)
+  const selectedIncident = useSelector(selectSelectedIncident)
   const incidentMarkers = useIncidentMarkers();
 
   const onCountryClick = useCallback((e) => {
+    if (e.originalEvent.defaultPrevented) return;
+
     const country = e.features[0].properties.name
     const countryId = sanitizeId(country);
     setRegion(countryId);
   }, [setRegion]);
+
+  const onIncidentClick = useCallback((e) => {
+    const incident = e.features[0].properties.data
+    setIncident(JSON.parse(incident));
+    
+    e.originalEvent.preventDefault();
+  }, [setIncident]);
+
+
+  const popup = new mapboxgl.Popup({ closeOnClick: true });
+
+  useEffect(() => {
+    if (!map) return;
+    if (!selectedIncident) popup.remove();
+
+    popup
+    .remove()
+    .setLngLat(selectedIncident.coordinates)
+    .setHTML('<h1>Hello World!</h1>')
+    .addTo(map);
+  }, [selectedIncident, map])
 
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/dark-v10',
       center: [5, 34],
-      zoom: 1.5
+      zoom: 1.5,
+      doubleClickZoom: false
     });
 
     map.on('load', () => {
@@ -51,8 +77,8 @@ const Map = () => {
             'fill-color': [
                 'match',
                 ['get', 'selected'],
-                'true', '#64bdbb', // if selected true, paint in blue
-                'rgba(0, 0, 0, 0)' // else paint in gray
+                'true', '#64bdbb',
+                'rgba(0, 0, 0, 0)'
             ],
             'fill-opacity': 0,
           },
@@ -65,8 +91,6 @@ const Map = () => {
         data: incidentMarkers
       });
 
-      console.log(incidentMarkers);
-
       map.addLayer({
         id: 'incidents',
         type: 'symbol',
@@ -77,26 +101,15 @@ const Map = () => {
         }
       });
 
+      map.on('click', 'incidents', onIncidentClick);
 
-      // https://github.com/mapbox/mapbox-react-examples/tree/master/data-overlay-redux/src
-      // https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
-      // https://docs.mapbox.com/mapbox-gl-js/example/live-update-feature/
-      /*
-        new mapboxgl.Popup()
-          .setLngLat(coordinates)
-          .setHTML(description)
-          .addTo(map);
-      */
-
-      map.on('click', 'countries', onCountryClick);
+      map.on('dblclick', 'countries', onCountryClick);
        
-      // Change the cursor to a pointer when the mouse is over the places layer.
-      map.on('mouseenter', 'countries', () => {
+      map.on('mouseenter', 'incidents', () => {
         map.getCanvas().style.cursor = 'pointer';
       });
-       
-      // Change it back to a pointer when it leaves.
-      map.on('mouseleave', 'countries', () => {
+
+      map.on('mouseleave', 'incidents', () => {
         map.getCanvas().style.cursor = '';
       });
 

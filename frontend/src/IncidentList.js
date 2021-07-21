@@ -1,10 +1,15 @@
 import React, { useCallback } from 'react';
-import { setRegion } from './redux/actions.js'
+import { setRegion, setIncident } from './redux/actions.js'
 import useFilteredIncidents from './redux/useFilteredIncidents.js'
 
 const IncidentListItem = ({ item }) => {
+
+  const onSelectIncident = useCallback(({ target }) => {
+    setIncident(item);
+  }, [setIncident, item]);
+
   return (
-    <div className="incident-list__item">
+    <div className="incident-list__item" onClick={onSelectIncident}>
       <span className="incident-list__item-timestamp">{item.timestamp.toLocaleDateString('en-CA')}</span>
       <span className="incident-list__item-preview">{item.plaintext}</span>
     </div>
@@ -13,10 +18,6 @@ const IncidentListItem = ({ item }) => {
 
 const IncidentList = () => {
   const incidents = useFilteredIncidents();
-
-  const onSelectIncident = useCallback(({ target }) => {
-    setRegion(target.value);
-  });
 
   return (
     <div className="incident-list">

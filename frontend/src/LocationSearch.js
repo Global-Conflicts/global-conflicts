@@ -2,6 +2,7 @@ import React, { useMemo, useCallback } from 'react';
 import { useSelector } from 'react-redux'
 import { setRegion } from './redux/actions.js'
 import useRegionList from './redux/useRegionList.js'
+import classList from './helpers/classList.js'
 
 const selectSelectedRegion = state => state.selectedRegion;
 
@@ -14,6 +15,15 @@ const LocationSearch = () => {
   const onChange = useCallback(({ target }) => {
     setRegion(target.value);
   }, []);
+
+  const onReset = useCallback(({ target }) => {
+    setRegion('global');
+  }, []);
+
+  const resetClassNames = classList({
+    'location__reset': true,
+    'location__reset--hidden': selectedRegion === 'global',
+  });
 
   return (
     <div className="location">
@@ -29,6 +39,9 @@ const LocationSearch = () => {
             <option key={region.key} value={region.key}>{region.value}</option>)
         }
       </select>
+      <button className={resetClassNames} onClick={onReset}>
+        Reset
+    </button>
     </div>
   );
 }

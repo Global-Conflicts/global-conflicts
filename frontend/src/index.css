@@ -31,6 +31,10 @@ code {
   background-color: #404C57;
 }
 
+.location__reset--hidden {
+  display: none;
+}
+
 .incident-list {
   overflow-y: scroll;
   display: flex;
@@ -42,6 +46,7 @@ code {
   display: flex;
   flex-direction: row;
   gap: .6rem;
+  cursor: pointer;
 }
 
 .incident-list__item-timestamp {
