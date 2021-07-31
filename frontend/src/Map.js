@@ -4,11 +4,13 @@ import React, {
   useState,
   useCallback
 } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import mapboxgl from 'mapbox-gl';
 import { useSelector } from 'react-redux'
 import { setRegion, setIncident } from './redux/actions.js'
 import useIncidentMarkers from './redux/useIncidentMarkers.js'
 import sanitizeId from './redux/sanitizeId.js'
+import Marker from './Marker.js'
 
 const selectGeodata = state => state.geodata;
 const selectSelectedIncident = state => state.selectedIncident;
@@ -46,10 +48,12 @@ const Map = () => {
     if (!map) return;
     if (!selectedIncident) popup.remove();
 
+    const html = ReactDOMServer.renderToString(<Marker {...selectedIncident}></Marker>)
+
     popup
     .remove()
     .setLngLat(selectedIncident.coordinates)
-    .setHTML('<h1>Hello World!</h1>')
+    .setHTML(html)
     .addTo(map);
   }, [selectedIncident, map])
 
