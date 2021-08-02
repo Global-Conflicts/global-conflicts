@@ -27,7 +27,7 @@ const LocationSearch = () => {
 
   return (
     <div className="location">
-      <label className="location__label" htmlFor="location">Location</label>
+      <label className="location__label" htmlFor="location">Location:</label>
       <select 
         id="location"
         className="location__select"
