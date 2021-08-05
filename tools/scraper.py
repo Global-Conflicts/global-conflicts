@@ -18,8 +18,9 @@ def scrape_range(start, end):
 
 def scrape_date(date):
     timestamp = date.strftime('%Y_%B_%-d')
-    url = f'https://en.wikipedia.org/wiki/Portal%3aCurrent_events/{timestamp}?action=raw'
-    page = requests.get(url)
+    url = f'https://en.wikipedia.org/wiki/Portal%3aCurrent_events/{timestamp}'
+    rawUrl = f'{url}?action=raw'
+    page = requests.get(rawUrl)
     source = page.content.decode('utf-8')
     output = json.dumps({
         'date': date.strftime('%Y-%m-%d'),
