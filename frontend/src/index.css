@@ -96,7 +96,7 @@ header {
 }
 
 .incident-list__item:hover {
-  background-color: #18796d;
+  background-color: #50a453;
 }
 
 .incident-list__item-timestamp {
@@ -147,7 +147,7 @@ header {
 }
 
 .marker__region {
-  background-color: #18796d;
+  background-color: #50a453;
 }
 
 .marker__richtext {
@@ -167,6 +167,19 @@ header {
   bottom: 0;
   right: 0;
   left: 25%;
-  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: #404C57;
+  padding: 2.5rem 1rem;
+  gap: 1rem;
+}
+
+.react_time_range__time_range_container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.timeline__date-picker {
+  min-width: 8rem;
 }
