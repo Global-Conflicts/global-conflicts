@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from 'html-react-parser';
 
 const Marker = ({
   id,
@@ -10,14 +11,16 @@ const Marker = ({
   link
 }) => (
   <div className="marker__container">
-    <span className="marker__timestamp">{timestamp.toLocaleDateString('en-CA')}</span>
-    {
-      regions.map((region) => (
-        <span className="marker__region">{region}</span>
-      ))
-    }
-    <span className="marker__richtext">{richtext}</span>
-    <a className="marker__richtext" href={link}>Source</a>
+    <div className="marker__tags">
+      <span className="marker__timestamp">{timestamp.toLocaleDateString('en-CA')}</span>
+      {
+        regions.map((region) => (
+          <span className="marker__region">{region}</span>
+        ))
+      }
+    </div>
+    <span className="marker__richtext">{parse(richtext)}</span>
+    <a className="marker__source" href={link}>Source</a>
   </div>
 );
 

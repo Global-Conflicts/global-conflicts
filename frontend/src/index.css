@@ -64,6 +64,15 @@ header {
   flex-grow: 1;
 }
 
+.location__reset {
+  padding: 0 .3rem;
+  font-size: 0.9rem;
+}
+
+.location__reset:hover {
+  text-decoration: underline;
+}
+
 .location__reset--hidden {
   visibility: hidden;
 }
@@ -104,6 +113,53 @@ header {
   display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-top-left, .mapboxgl-ctrl-top-right {
+  z-index: auto;
+}
+
+.marker__container {
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.marker__container a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.marker__tags {
+  padding-top: .2rem;
+}
+
+.marker__timestamp, .marker__region {
+  color: white;
+  font-size: .75rem;
+  border-radius: .3rem;
+  padding: .15rem .4rem;
+  margin-right: .5rem;
+}
+
+.marker__timestamp {
+  background-color: #a2603a;
+}
+
+.marker__region {
+  background-color: #18796d;
+}
+
+.marker__richtext {
+  padding-top: .3rem;
+}
+
+.marker__source {
+  text-align: right;
+}
+
+.marker__source::after {
+  content: " \2197"
 }
 
 .timeline {

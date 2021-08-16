@@ -35,8 +35,10 @@ const Map = () => {
   }, [setRegion]);
 
   const onIncidentClick = useCallback((e) => {
-    const incident = e.features[0].properties.data
-    setIncident(JSON.parse(incident));
+    const jsonString = e.features[0].properties.data
+    const incident = JSON.parse(jsonString);
+    incident['timestamp'] = new Date(incident['timestamp']);
+    setIncident(incident);
     
     e.originalEvent.preventDefault();
   }, [setIncident]);
@@ -46,7 +48,10 @@ const Map = () => {
 
   useEffect(() => {
     if (!map) return;
-    if (!selectedIncident) popup.remove();
+    if (!selectedIncident) {
+      popup.remove();
+      return;
+    }
 
     const html = ReactDOMServer.renderToString(<Marker {...selectedIncident}></Marker>)
 
