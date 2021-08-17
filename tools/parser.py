@@ -23,7 +23,7 @@ def parse_date(data):
     extract = extract.replace('\n\n', '\n').replace('\n\n', '\n')
     parsed = wikitextparser.parse(extract)
     parsed_lists = parse_lists(parsed)
-    data['source'] = None
+    del data['source']
     data['items'] = parsed_lists
     return data
 

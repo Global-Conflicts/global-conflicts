@@ -13,8 +13,7 @@ def main():
 
     with open(path, "w") as text_file:
         text_file.write('{"incidents":[')
-        for line in sys.stdin:
-            text_file.write(line + ',')
+        text_file.write(','.join(sys.stdin))
         text_file.write(']}')
 
 if __name__ == "__main__":

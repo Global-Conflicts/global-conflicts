@@ -52,6 +52,7 @@ function Timeline() {
         onChange={onStartDateChange}
         min={dateToTimestamp(minDate)} 
         max={dateToTimestamp(endDate)} 
+        required
       />
       <TimeRange
         ticksNumber={steps}
@@ -69,6 +70,7 @@ function Timeline() {
         onChange={onEndDateChange}
         min={dateToTimestamp(startDate)} 
         max={dateToTimestamp(maxDate)}
+        required
       />
     </div>
   );

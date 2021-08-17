@@ -10,7 +10,7 @@ const IncidentListItem = ({ item }) => {
 
   return (
     <div className="incident-list__item" onClick={onSelectIncident}>
-      <span className="incident-list__item-timestamp">{item.timestamp.toLocaleDateString('en-CA')}</span>
+      <span className="incident-list__item-timestamp">{item.date}</span>
       <span className="incident-list__item-preview">{item.plaintext}</span>
     </div>
   );
@@ -20,11 +20,13 @@ const IncidentList = () => {
   const incidents = useFilteredIncidents();
 
   return (
-    <div className="incident-list">
-      {
-        incidents.map(item => <IncidentListItem key={item.id} item={item} />)
-      }
-    </div>
+    <>
+      <div className="incident-list">
+        {
+          incidents.map(item => <IncidentListItem key={item.key} item={item} />)
+        }
+      </div>
+    </>
   );
 }
 

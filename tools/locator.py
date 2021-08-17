@@ -7,7 +7,9 @@ import wptools
 def main():
     for line in sys.stdin:
         data = json.loads(line)
-        data['regions'] = find_regions(data['wikitext'])
+        data['regions'] = ['Russia']
+        data['coordinates'] = [-77.038659, 38.931567]
+        # data['regions'] = find_regions(data['wikitext'])
         output = json.dumps(data)
         sys.stdout.write(output + '\n')
 

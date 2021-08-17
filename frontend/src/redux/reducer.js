@@ -1,4 +1,7 @@
-import geodata from '../data.json';
+import geodata from '../data/geodata.json';
+import { incidents } from '../data/incidents.json';
+
+const filtered_incidents = incidents.map((i) => ({...i, timestamp: new Date(i.date)})).reverse();
 
 const timeline = {
   minDate: new Date('2010-01-01'),
@@ -7,23 +10,11 @@ const timeline = {
   selectedEndDate: new Date()
 };
 
-const incidents = Array(40).fill(
-  {
-    id: null,
-    timestamp: new Date('2021-01-01'),
-    plaintext: '2014 pro-Russian unrest in Ukraine: An airstrike on the rebel-held town of Snizhne kills at least eleven civilians. (AP via Washington Post)',
-    richtext: '2014 pro-Russian unrest in Ukraine: An airstrike on the rebel-held town of Snizhne kills at least eleven civilians. <a href="http://google.de">(AP via Washington Post)</a>',
-    regions: ['Russia'],
-    coordinates: [-77.038659, 38.931567],
-    link: 'https://en.wikipedia.org/wiki/Portal%3aCurrent_events/2012_November_25'
-  }
-).map((i) => ({...i, id: Math.random().toString(36).substring(7)}));
-
 const initialState = {
   geodata,
   timeline,
-  incidents,
-  selectedIncident: incidents[0],
+  incidents: filtered_incidents,
+  selectedIncident: filtered_incidents[0],
   selectedRegion: 'global'
 };
 

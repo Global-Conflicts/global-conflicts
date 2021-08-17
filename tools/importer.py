@@ -4,7 +4,6 @@ import json
 import gzip
 import xml.etree.ElementTree as ET
 import argparse
-from hashlib import sha256
 from pathlib import Path
 
 def main():
@@ -15,7 +14,7 @@ def main():
 
     for line in sys.stdin:
         data = json.loads(line)
-        root = read_file(data['plaintext'], data['date'], input_directory)
+        root = read_file(data['key'], data['plaintext'], data['date'], input_directory)
 
         # calculate average sentiment
         sentiment_elements = root.findall('{http:///org/hucompute/textimager/uima/type.ecore}Sentiment')
@@ -25,9 +24,8 @@ def main():
         output = json.dumps(data)
         sys.stdout.write(output + '\n')
 
-def read_file(news_report, date, folder):
-    hash_id = sha256(news_report.encode('utf-8')).hexdigest()[0:6]
-    filename = f'{date}-{hash_id}.txt.xmi.gz'
+def read_file(key, news_report, date, folder):
+    filename = f'{key}.txt.xmi.gz'
     path = os.path.join(folder, filename)
     with gzip.open(path, 'rb') as f:
         xml_content = f.read()

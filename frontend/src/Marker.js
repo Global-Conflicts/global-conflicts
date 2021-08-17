@@ -3,24 +3,24 @@ import parse from 'html-react-parser';
 
 const Marker = ({
   id,
-  timestamp,
+  date,
   plaintext,
   richtext,
   regions,
   coordinates,
-  link
+  url
 }) => (
   <div className="marker__container">
     <div className="marker__tags">
-      <span className="marker__timestamp">{timestamp.toLocaleDateString('en-CA')}</span>
+      <span className="marker__timestamp">{date}</span>
       {
         regions.map((region) => (
           <span className="marker__region">{region}</span>
         ))
       }
     </div>
-    <span className="marker__richtext">{parse(richtext)}</span>
-    <a className="marker__source" href={link}>Source</a>
+    <span className="marker__richtext">{plaintext}</span>
+    <a className="marker__source" href={url} target="_blank">Source</a>
   </div>
 );
 

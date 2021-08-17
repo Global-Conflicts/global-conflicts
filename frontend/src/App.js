@@ -8,9 +8,9 @@ import { store } from './redux/store';
 function App() {
   return (
     <Provider store={store}>
-      <div>
-        <Map />
+      <div className="app">
         <Sidebar />
+        <Map />
         <Timeline />
       </div>
     </Provider>

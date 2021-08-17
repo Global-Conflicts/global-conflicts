@@ -17,11 +17,16 @@ def main():
         news_reports = extract_news_reports(data['items'], category)
 
         for report in news_reports:
+            plaintext = convert_to_plain_text(report)
+            hashed = sha256(plaintext.encode('utf-8')).hexdigest()[0:6]
+            date = data['date']
+            key = f'{date}-{hashed}'
             output = json.dumps({
-              'wikitext': report,
-              'plaintext': convert_to_plain_text(report),
-              'date': data['date'],
-              'url': data['url']
+                'key': key,
+                'wikitext': report,
+                'plaintext': plaintext,
+                'date': date,
+                'url': data['url']
             })
             sys.stdout.write(output + '\n')
 

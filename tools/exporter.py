@@ -2,7 +2,6 @@ import os
 import sys
 import json
 import argparse
-from hashlib import sha256
 from pathlib import Path
 
 def main():
@@ -15,7 +14,7 @@ def main():
 
     for line in sys.stdin:
         data = json.loads(line)
-        save_to_file(data['plaintext'], data['date'], output_directory)
+        save_to_file(data['key'], data['plaintext'], data['date'], output_directory)
         sys.stdout.write(line)
 
 def clean_directory(path):
@@ -25,9 +24,8 @@ def clean_directory(path):
         os.unlink(file.path)
 
 
-def save_to_file(news_report, date, folder):
-    hash_id = sha256(news_report.encode('utf-8')).hexdigest()[0:6]
-    filename = f'{date}-{hash_id}.txt'
+def save_to_file(key, news_report, date, folder):
+    filename = f'{key}.txt'
     path = os.path.join(folder, filename)
     with open(path, "w") as text_file:
         text_file.write(news_report)

@@ -44,22 +44,22 @@ const Map = () => {
   }, [setIncident]);
 
 
-  const popup = new mapboxgl.Popup({ closeOnClick: true });
+  const [popup, setPopup] = useState(null);
 
   useEffect(() => {
     if (!map) return;
-    if (!selectedIncident) {
-      popup.remove();
-      return;
-    }
+    if (popup) popup.remove();
+    if (!selectedIncident) return;
 
     const html = ReactDOMServer.renderToString(<Marker {...selectedIncident}></Marker>)
 
-    popup
-    .remove()
-    .setLngLat(selectedIncident.coordinates)
-    .setHTML(html)
-    .addTo(map);
+    const newPopup = new mapboxgl.Popup({ closeOnClick: true })
+      .setLngLat(selectedIncident.coordinates)
+      .setHTML(html)
+      .addTo(map);
+
+    setPopup(newPopup);
+
   }, [selectedIncident, map])
 
   useEffect(() => {
@@ -130,9 +130,7 @@ const Map = () => {
   }, []);
 
   return (
-    <div>
-      <div ref={mapContainerRef} className='map-container' />
-    </div>
+    <div ref={mapContainerRef} className='map-container' />
   );
 };
 
