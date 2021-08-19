@@ -1,11 +1,14 @@
 import React from 'react';
 import parse from 'html-react-parser';
+import wiki2html from './helpers/wiki2html';
+
+const baseurl = 'https://en.wikipedia.org/wiki/'
 
 const Marker = ({
   id,
   date,
   plaintext,
-  richtext,
+  wikitext,
   regions,
   coordinates,
   url
@@ -19,8 +22,8 @@ const Marker = ({
         ))
       }
     </div>
-    <span className="marker__richtext">{plaintext}</span>
-    <a className="marker__source" href={url} target="_blank">Source</a>
+    <span className="marker__richtext">{parse(wiki2html(wikitext, baseurl))}</span>
+    <a className="marker__source" href={url} target="_blank">Link to Wikipedia</a>
   </div>
 );
 

@@ -17,7 +17,7 @@ const useFilteredIncidents = () => {
       i.timestamp >= selectedStartDate &&
       i.timestamp <= selectedEndDate &&
       (selectedRegion === 'global' || 
-      i.regions.map(s => s.toLowerCase()).includes(selectedRegion))
+      (i.regions && i.regions.map(s => s.toLowerCase()).includes(selectedRegion)))
     );
     return incidents.filter(filter);
   }, [incidents, selectedStartDate, selectedEndDate, selectedRegion]);
