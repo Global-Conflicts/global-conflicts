@@ -54,7 +54,7 @@ const Map = () => {
     const html = ReactDOMServer.renderToString(<Marker {...selectedIncident}></Marker>)
 
     const newPopup = new mapboxgl.Popup({ closeOnClick: true })
-      .setLngLat(selectedIncident.coordinates)
+      .setLngLat(selectedIncident.coordinates[0])
       .setHTML(html)
       .addTo(map);
 

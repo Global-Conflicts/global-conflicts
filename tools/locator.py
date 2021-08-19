@@ -6,8 +6,9 @@ import wikitextparser
 def main():
     for line in sys.stdin:
         data = json.loads(line)
-        data['coordinates'] = [-77.038659, 38.931567]
-        data['regions'] = find_regions(data['wikitext'])
+        countries, coordinates = query_wikidata(data['wikitext'])
+        data['coordinates'] = coordinates
+        data['regions'] = countries
         output = json.dumps(data)
         sys.stdout.write(output + '\n')
 
@@ -18,39 +19,59 @@ def scrape_links(wikitext):
         output.append(link.title)
     return output
 
-def find_regions(wikitext):
+def query_wikidata(wikitext):
     links = scrape_links(wikitext)
     parameters = "\r\n".join(map(lambda x: f"\"{x}\"@en", links))
 
     query = f"""
-    SELECT *
-    WHERE
-    {{
-        VALUES ?value
-        {{
+    SELECT ?point ?countryLabel WHERE {{
+      VALUES ?page {{
         {parameters}
-        }}
-
-        ?place rdfs:label ?value ;
-        dbo:country ?country .
-
-        ?country a dbo:Country ;
-        rdfs:label ?commonName .
-
-        FILTER ( LANG ( ?commonName ) = 'en' )
+      }}
+      ?sitelink schema:about ?item;
+                schema:isPartOf <https://en.wikipedia.org/>;
+                schema:name ?page.
+      Optional {{
+        ?item  p:P625 ?coordinate.
+        ?coordinate ps:P625 ?point.
+      }}
+      Optional {{
+        ?item p:P17 ?historic_country.
+        ?historic_country ps:P17 ?country.
+        FILTER NOT EXISTS {{?country wdt:P31 wd:Q3024240}}
+        FILTER NOT EXISTS {{?country wdt:P576 ?date}}
+        SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }}
+      }}
     }}
     """
 
-    url = f'https://dbpedia.org/sparql?query={query}&timeout=10000&format=application%2Fsparql-results%2Bjson'
-    response = requests.get(url)
-    source = response.content.decode('utf-8')
+    headers = {
+        'User-Agent': 'User-Agent: ArmedConflictsPipeline/0.1 (jfbausch@outlook.com)',
+    }
 
+    url = f'https://query.wikidata.org/sparql?format=json&timeout=5000&query={query}'
+    response = requests.get(url, headers=headers)
     if response.status_code != 200:
-        return
+        return [], []
 
+    source = response.content.decode('utf-8')
     data = json.loads(source)
-    
-    return list(set(map(lambda x: x['commonName']['value'], data['results']['bindings'])))
+
+    countries = []
+    coordinates = []
+
+    for item in data['results']['bindings']:
+        if 'countryLabel' in item:
+            value = item['countryLabel']['value']
+            if value not in countries:
+                countries.append(value)
+
+        if 'point' in item:
+            rawValue = item['point']['value']
+            [lat, lng] = rawValue.replace('Point(', '').replace(')', '').split(' ')
+            coordinates.append([float(lat), float(lng)])
+
+    return countries, coordinates
 
 if __name__ == "__main__":
     main()
