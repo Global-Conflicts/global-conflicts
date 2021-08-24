@@ -14,7 +14,7 @@ const initialState = {
   geodata,
   timeline,
   incidents: filtered_incidents,
-  selectedIncident: filtered_incidents[0],
+  selectedIncident: null,
   selectedRegion: 'global'
 };
 

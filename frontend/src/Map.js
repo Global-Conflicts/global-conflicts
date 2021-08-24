@@ -43,6 +43,19 @@ const Map = () => {
     e.originalEvent.preventDefault();
   }, [setIncident]);
 
+  const onClusterClick = useCallback((e) => {
+    if (!map) return;
+
+    const coordinates = e.features[0].geometry.coordinates;
+    const zoom = map.getZoom();
+
+    console.log(coordinates, zoom);
+
+    map.easeTo({
+      center: coordinates,
+      zoom: zoom + 1
+    });
+  }, [map]);
 
   const [popup, setPopup] = useState(null);
 
@@ -61,6 +74,13 @@ const Map = () => {
     setPopup(newPopup);
 
   }, [selectedIncident, map])
+
+  useEffect(() => {
+    if (!map) return;
+
+    map.getSource('incidents').setData(incidentMarkers);
+
+  }, [map, incidentMarkers])
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -97,28 +117,83 @@ const Map = () => {
 
       map.addSource('incidents', {
         type: 'geojson',
-        data: incidentMarkers
+        data: incidentMarkers,
+        cluster: true,
+        clusterMaxZoom: 14, // Max zoom to cluster points on
+        clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
       });
 
       map.addLayer({
-        id: 'incidents',
+        id: 'clusters',
+        type: 'circle',
+        source: 'incidents',
+        filter: ['has', 'point_count'],
+        paint: {
+          'circle-color': [
+            'step',
+            ['get', 'point_count'],
+            '#51bbd6',
+            10,
+            '#f1f075',
+            20,
+            '#f28cb1'
+          ],
+          'circle-radius': [
+            'step',
+            ['get', 'point_count'],
+            20,
+            10,
+            20,
+            20,
+            30
+          ]
+        }
+      });
+         
+      map.addLayer({
+        id: 'cluster-count',
         type: 'symbol',
         source: 'incidents',
+        filter: ['has', 'point_count'],
+        layout: {
+          'text-field': '{point_count_abbreviated}',
+          'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+          'text-size': 12
+        }
+      });
+         
+      map.addLayer({
+        id: 'unclustered-point',
+        type: 'symbol',
+        source: 'incidents',
+        filter: ['!', ['has', 'point_count']],
         layout: {
           'icon-image': '{icon}',
           'icon-allow-overlap': true
         }
       });
 
-      map.on('click', 'incidents', onIncidentClick);
+      map.on('click', 'clusters', onClusterClick);
+
+      map.on('click', 'unclustered-point', onIncidentClick);
 
       map.on('dblclick', 'countries', onCountryClick);
        
-      map.on('mouseenter', 'incidents', () => {
+      /*
+      map.on('mouseenter', 'clusters', () => {
         map.getCanvas().style.cursor = 'pointer';
       });
 
-      map.on('mouseleave', 'incidents', () => {
+      map.on('mouseleave', 'clusters', () => {
+        map.getCanvas().style.cursor = '';
+      });
+      */
+
+      map.on('mouseenter', 'unclustered-point', () => {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+
+      map.on('mouseleave', 'unclustered-point', () => {
         map.getCanvas().style.cursor = '';
       });
 
@@ -127,7 +202,7 @@ const Map = () => {
 
     // Clean up on unmount
     return () => map.remove();
-  }, []);
+  }, [setMap]);
 
   return (
     <div ref={mapContainerRef} className='map-container' />

@@ -114,6 +114,10 @@ header {
   white-space: nowrap;
 }
 
+.mapboxgl-popup {
+  max-width: 500px !important;
+}
+
 .marker__container {
   color: black;
   padding: .2rem;
@@ -125,16 +129,14 @@ header {
   text-decoration: underline dotted;
 }
 
-.marker__tags {
-  padding-top: .2rem;
-}
-
 .marker__timestamp, .marker__region {
+  display: inline-block;
   color: white;
   font-size: .75rem;
   border-radius: .3rem;
   padding: .15rem .4rem;
   margin-right: .5rem;
+  margin-top: .2rem;
 }
 
 .marker__timestamp {
