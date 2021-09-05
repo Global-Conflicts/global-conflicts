@@ -44,6 +44,7 @@ const Map = () => {
   }, [setIncident]);
 
   const onClusterClick = useCallback((e) => {
+    console.log(map);
     if (!map) return;
 
     const coordinates = e.features[0].geometry.coordinates;
@@ -66,12 +67,18 @@ const Map = () => {
 
     const html = ReactDOMServer.renderToString(<Marker {...selectedIncident}></Marker>)
 
+    const coordinates = selectedIncident.coordinates[0];
+
     const newPopup = new mapboxgl.Popup({ closeOnClick: true })
-      .setLngLat(selectedIncident.coordinates[0])
+      .setLngLat(coordinates)
       .setHTML(html)
       .addTo(map);
 
     setPopup(newPopup);
+
+    map.easeTo({
+      center: coordinates
+    });
 
   }, [selectedIncident, map])
 
@@ -103,13 +110,7 @@ const Map = () => {
           source: 'countries',
           type: 'fill',
           paint: {
-            'fill-color': [
-                'match',
-                ['get', 'selected'],
-                'true', '#64bdbb',
-                'rgba(0, 0, 0, 0)'
-            ],
-            'fill-opacity': 0,
+            'fill-color': 'rgba(0, 0, 0, 0)'
           },
         },
         'country-label'
