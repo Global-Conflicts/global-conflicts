@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux'
 import { setTimelineStart, setTimelineEnd } from './redux/actions.js'
 
@@ -31,24 +31,32 @@ function Timeline() {
     setTimelineEnd(new Date(target.value));
   }, [setTimelineStart, setTimelineEnd]);
 
+
+  const [tempStartDate, setTempStartDate] = useState(startDate);
+  const [tempEndDate, setTempEndDate] = useState(endDate);
+
   const onDateChange = useCallback((value) => {
     const { time } = value;
     const [startDate, endDate] = time;
+    setTempStartDate(startDate);
+    setTempEndDate(endDate);
+  }, [setTempStartDate, setTempEndDate]);
 
-    setTimelineStart(startDate);
-    setTimelineEnd(endDate);
-  }, [setTimelineStart, setTimelineEnd]);
+  const onMouseUp = useCallback((value) => {
+    if (tempStartDate) setTimelineStart(tempStartDate);
+    if (tempEndDate) setTimelineEnd(tempEndDate);
+  }, [tempStartDate, tempEndDate, setTimelineStart, setTimelineEnd]);
 
   const onDateErrorUpdate = () => {};
 
   const formatTick = (ms) => new Date(ms).getFullYear();
 
   return (
-    <div className="timeline">
+    <div onMouseUp={onMouseUp} className="timeline">
       <input 
         type="date"
         className="timeline__date-picker" 
-        value={dateToTimestamp(startDate)}
+        value={dateToTimestamp(tempStartDate)}
         onChange={onStartDateChange}
         min={dateToTimestamp(minDate)} 
         max={dateToTimestamp(endDate)} 
@@ -66,7 +74,7 @@ function Timeline() {
       <input 
         type="date"
         className="timeline__date-picker" 
-        value={dateToTimestamp(endDate)}
+        value={dateToTimestamp(tempEndDate)}
         onChange={onEndDateChange}
         min={dateToTimestamp(startDate)} 
         max={dateToTimestamp(maxDate)}
