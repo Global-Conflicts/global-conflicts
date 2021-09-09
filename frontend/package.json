@@ -12,7 +12,8 @@
     "redux": "^4.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "production": "PORT=80 react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build"
   },
   "browserslist": {
