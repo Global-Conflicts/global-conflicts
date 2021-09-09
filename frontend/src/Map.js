@@ -5,7 +5,7 @@ import React, {
   useCallback
 } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from '!mapbox-gl';
 import { useSelector } from 'react-redux'
 import { setRegion, setIncident } from './redux/actions.js'
 import useIncidentMarkers from './redux/useIncidentMarkers.js'
