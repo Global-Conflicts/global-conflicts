@@ -7,5 +7,5 @@ RUN npm ci --silent
 COPY ./frontend ./
 RUN npm run build
 RUN npm i -g serve
-CMD serve -p 5000 ./build
+CMD serve -s ./build -p 5000 --cors
 
