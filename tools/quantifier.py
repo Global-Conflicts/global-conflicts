@@ -2,15 +2,40 @@ import sys
 import re
 import json
 
-keywords_arg1 = ['killed by']
-keywords_arg2 = ['kills']
+keywords_arg1 = [
+    'are killed',
+    'were killed',
+    'was shot',
+    'is killed',
+    'die',
+    'are shot',
+    'are fatally shot',
+    'is shot',
+    'have been killed',
+    'died',
+    'has been killed',
+    'was killed',
+    'is assassinated',
+    'are also killed',
+    'were shot',
+    'is fatally shot'
+]
+
+keywords_arg2 = [
+    'has killed',
+    'killed',
+    'kill',
+    'killing',
+    'shoot',
+    'kills',
+    'assaulted',
+    'assault'
+]
 
 digits = [
     'zero', 'one', 'two', 'three', 'four', 'five', 'six',
     'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'
 ]
-
-unique_rels = []
 
 def main():
     for line in sys.stdin:
@@ -31,11 +56,6 @@ def main():
 
 def extract_casualty_description(relations):
     for relation in relations:
-
-        if relation.get('rel') not in unique_rels:
-            unique_rels.append(relation.get('rel'))
-            print(relation.get('rel'))
-
         if relation.get('rel') in keywords_arg1:
             return relation.get('arg1')
         if relation.get('rel') in keywords_arg2:

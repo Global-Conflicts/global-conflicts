@@ -1,5 +1,5 @@
 # build environment
-FROM node:10.19.0-alpine as build
+FROM node:12-alpine as build
 WORKDIR /app
 COPY ./frontend/package.json ./
 COPY ./frontend/package-lock.json ./
