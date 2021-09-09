@@ -14,6 +14,7 @@ const useFilteredIncidents = () => {
 
   const filteredIncidents = useMemo(() => {
     const filter = (i) => (
+      i.coordinates.length > 0 &&
       i.timestamp >= selectedStartDate &&
       i.timestamp <= selectedEndDate &&
       (selectedRegion === 'global' || 

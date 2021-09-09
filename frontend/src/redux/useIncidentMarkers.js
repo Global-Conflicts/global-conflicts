@@ -13,7 +13,6 @@ const useIncidentMarkers = () => {
       return coordinates.map(c => ({...incident, coordinates: [c]}))
     };
     const markers = incidentsWithCoordinates.map(filterA).flat();
-    console.log(markers);
 
     const filterB = (incident) => (
       {

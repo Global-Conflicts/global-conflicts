@@ -50,8 +50,6 @@ const Map = () => {
     const coordinates = e.features[0].geometry.coordinates;
     const zoom = map.getZoom();
 
-    console.log(coordinates, zoom);
-
     map.easeTo({
       center: coordinates,
       zoom: zoom + 1
