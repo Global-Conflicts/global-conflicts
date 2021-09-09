@@ -11,6 +11,8 @@ const Marker = ({
   wikitext,
   regions,
   coordinates,
+  casualty_count,
+  casualty_description,
   url
 }) => (
   <div className="marker__container">
@@ -20,6 +22,9 @@ const Marker = ({
         regions.map((region) => (
           <span className="marker__region">{region}</span>
         ))
+      }
+      {casualty_description &&
+        <span className="marker__casualties">{casualty_description}</span>
       }
     </div>
     <span className="marker__richtext">{parse(wiki2html(wikitext, baseurl))}</span>

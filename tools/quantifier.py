@@ -19,16 +19,16 @@ keywords_arg1 = [
     'are also killed',
     'were shot',
     'is fatally shot'
+    'killed',
+    'assaulted',
 ]
 
 keywords_arg2 = [
     'has killed',
-    'killed',
     'kill',
     'killing',
     'shoot',
     'kills',
-    'assaulted',
     'assault'
 ]
 
@@ -52,14 +52,14 @@ def main():
         data['casualty_count'] = casulty_count
 
         output = json.dumps(data)
-        # sys.stdout.write(output + '\n')
+        sys.stdout.write(output + '\n')
 
 def extract_casualty_description(relations):
     for relation in relations:
         if relation.get('rel') in keywords_arg1:
             return relation.get('arg1')
         if relation.get('rel') in keywords_arg2:
-            return relation.get('arg1')
+            return relation.get('arg2')
 
     return None
 

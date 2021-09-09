@@ -1,16 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
   color: #f9f9f9;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 .app {
@@ -20,17 +11,16 @@ code {
   right: 0;
   left: 0;
   display: grid;
-  grid-template-columns: 25% 75%;
-  grid-template-rows: 80% 20%;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 50% 10%;
 }
 
 .sidebar {
-  grid-row-start: 1;
-  grid-row-end: 3;
   display: flex;
   flex-direction: column;
   background-color: #404C57;
 }
+
 
 header {
   display: flex;
@@ -100,6 +90,7 @@ header {
 
 .incident-list__item-timestamp {
   color: white;
+  flex: 0 0 auto;
   background-color: #a2603a;
   font-size: .8rem;
   border-radius: .3rem;
@@ -129,7 +120,7 @@ header {
   text-decoration: underline dotted;
 }
 
-.marker__timestamp, .marker__region {
+.marker__timestamp, .marker__region, .marker__casualties {
   display: inline-block;
   color: white;
   font-size: .75rem;
@@ -145,6 +136,10 @@ header {
 
 .marker__region {
   background-color: #50a453;
+}
+
+.marker__casualties {
+  background-color: #3f87b3;
 }
 
 .marker__richtext {
@@ -174,9 +169,31 @@ header {
 .react_time_range__time_range_container {
   padding-left: 0 !important;
   padding-right: 0 !important;
+  display:none;
+  flex-grow: 1;
 }
 
 .timeline__date-picker {
   min-width: 8rem;
+  flex-grow: 1;
   margin-bottom: .5rem;
+}
+
+@media (min-width: 979px) {
+  .app {
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 80% 20%;
+  }
+  .app {
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 80% 20%;
+  }
+
+  .sidebar {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .react_time_range__time_range_container {
+    display: block;
+  }
 }
