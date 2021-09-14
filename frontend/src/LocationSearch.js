@@ -6,7 +6,6 @@ import classList from './helpers/classList.js'
 
 const selectSelectedRegion = state => state.selectedRegion;
 
-
 const LocationSearch = () => {
   const regions = useRegionList()
   

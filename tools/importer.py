@@ -14,6 +14,7 @@ def main():
 
     for line in sys.stdin:
         data = json.loads(line)
+        
         root = read_file(data['key'], data['plaintext'], data['date'], input_directory)
 
         # calculate average sentiment
@@ -38,10 +39,12 @@ def convert_openie_relation(element):
 def read_file(key, news_report, date, folder):
     filename = f'{key}.txt.xmi.gz'
     path = os.path.join(folder, filename)
+
     with gzip.open(path, 'rb') as f:
         xml_content = f.read()
         root = ET.fromstring(xml_content)
         return root
+
 
 if __name__ == "__main__":
     main()

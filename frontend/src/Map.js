@@ -9,7 +9,6 @@ import mapboxgl from '!mapbox-gl';
 import { useSelector } from 'react-redux'
 import { setRegion, setIncident } from './redux/actions.js'
 import useIncidentMarkers from './redux/useIncidentMarkers.js'
-import sanitizeId from './redux/sanitizeId.js'
 import Marker from './Marker.js'
 
 const selectGeodata = state => state.geodata;
@@ -29,8 +28,7 @@ const Map = () => {
   const onCountryClick = useCallback((e) => {
     if (e.originalEvent.defaultPrevented) return;
 
-    const country = e.features[0].properties.name
-    const countryId = sanitizeId(country);
+    const countryId = e.features[0].properties.iso_a3
     setRegion(countryId);
   }, [setRegion]);
 
@@ -65,17 +63,17 @@ const Map = () => {
 
     const html = ReactDOMServer.renderToString(<Marker {...selectedIncident}></Marker>)
 
-    const coordinates = selectedIncident.coordinates[0];
+    const [lat, lng] = selectedIncident.coordinates[0];
 
     const newPopup = new mapboxgl.Popup({ closeOnClick: true })
-      .setLngLat(coordinates)
+      .setLngLat([lng, lat])
       .setHTML(html)
       .addTo(map);
 
     setPopup(newPopup);
 
     map.easeTo({
-      center: coordinates
+      center: [lng, lat]
     });
 
   }, [selectedIncident, map])

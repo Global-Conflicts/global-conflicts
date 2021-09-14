@@ -14,8 +14,9 @@ const useIncidentMarkers = () => {
     };
     const markers = incidentsWithCoordinates.map(filterA).flat();
 
-    const filterB = (incident) => (
-      {
+    const filterB = (incident) => {
+      const [lat, lng] = incident['coordinates'][0];
+      return {
         type: 'Feature',
         properties: {
           data: incident,
@@ -23,10 +24,10 @@ const useIncidentMarkers = () => {
         },
         geometry: {
           type: 'Point',
-          coordinates: incident['coordinates'][0]
+          coordinates: [lng, lat]
         }
       }
-    );
+    };
 
     const features = markers.map(filterB);
     return {

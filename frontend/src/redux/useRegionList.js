@@ -4,18 +4,21 @@ import sanitizeId from './sanitizeId.js'
 
 const selectGeodata = state => state.geodata;
 
-const global = { key: 'global', value: 'Global' }
+const global = { key: 'GLOBAL', value: 'Global' }
 
 const useRegionList = () => {
   const geodata = useSelector(selectGeodata)
 
-
   const regionList = useMemo(() => {
-    const filter = (feature) => ({ 
-      key: sanitizeId(feature.properties.name),
+    const map = (feature) => ({ 
+      key: feature.properties.iso_a3,
       value: feature.properties.name 
     });
-    const regions = geodata.features.map(filter)
+
+    // Filter out invalid keys
+    const filter = (feature) => /[A-Z]{3}/.test(feature.key);
+
+    const regions = geodata.features.map(map).filter(filter)
     return [global, ...regions];
   }, [geodata]);
 

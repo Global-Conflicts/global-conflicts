@@ -2,6 +2,7 @@ import sys
 import requests
 import json
 import wikitextparser
+import itertools
 
 def main():
     for line in sys.stdin:
@@ -24,7 +25,7 @@ def query_wikidata(wikitext):
     parameters = "\r\n".join(map(lambda x: f"\"{x}\"@en", links))
 
     query = f"""
-    SELECT ?point ?countryLabel WHERE {{
+    SELECT ?point ?iso3code WHERE {{
       VALUES ?page {{
         {parameters}
       }}
@@ -39,8 +40,7 @@ def query_wikidata(wikitext):
         ?item p:P17 ?historic_country.
         ?historic_country ps:P17 ?country.
         FILTER NOT EXISTS {{?country wdt:P31 wd:Q3024240}}
-        FILTER NOT EXISTS {{?country wdt:P576 ?date}}
-        SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }}
+        ?country wdt:P298 ?iso3code
       }}
     }}
     """
@@ -60,16 +60,29 @@ def query_wikidata(wikitext):
     countries = []
     coordinates = []
 
+    # Extract countries and coordinates
     for item in data['results']['bindings']:
-        if 'countryLabel' in item:
-            value = item['countryLabel']['value']
+        if 'iso3code' in item:
+            value = item['iso3code']['value']
             if value not in countries:
                 countries.append(value)
 
         if 'point' in item:
             rawValue = item['point']['value']
-            [lat, lng] = rawValue.replace('Point(', '').replace(')', '').split(' ')
+            # note, lng and lat is switched in Wikidata Point
+            [lng, lat] = rawValue.replace('Point(', '').replace(')', '').split(' ')
             coordinates.append([float(lat), float(lng)])
+
+    deleted_indices = set()
+    combinations = list(itertools.combinations(enumerate(coordinates), 2))
+
+    for ((a_i, [a_lat, a_lng]), (_, [b_lat, b_lng])) in combinations:
+        if (round(a_lat) == round(b_lat)) and (round(a_lat) == round(b_lat)):
+            # duplicate fond
+            deleted_indices.add(a_i)
+
+    for i in sorted(deleted_indices, reverse=True):
+        del coordinates[i]
 
     return countries, coordinates
 

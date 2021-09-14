@@ -31,6 +31,7 @@ def main():
         data = json.loads(line)
 
         worksheet.set_row(row, 200)
+        insert_source(worksheet, row, data.get('key'), data.get('url'), row_format)
         insert_plaintext(worksheet, row, data.get('plaintext'))
         insert_casualties(worksheet, row, data.get('casualty_description'), data.get('casualty_count'))
         insert_regions(worksheet, row, data.get('regions'))
@@ -41,15 +42,16 @@ def main():
     workbook.close()
 
 def insert_header(worksheet, header_format):
-    worksheet.write(0, 0, 'Plain report', header_format)
-    worksheet.write(0, 1, 'Correct? ➔', header_format)
-    worksheet.write(0, 2, 'Casualty description', header_format)
-    worksheet.write(0, 3, 'Correct? ➔', header_format)
-    worksheet.write(0, 4, 'Casualty description', header_format)
-    worksheet.write(0, 5, 'Correct? ➔', header_format)
-    worksheet.write(0, 6, 'Regions', header_format)
-    worksheet.write(0, 7, 'Correct? ➔', header_format)
-    worksheet.write(0, 8, 'Coordinates', header_format)
+    worksheet.write(0, 0, 'Source', header_format)
+    worksheet.write(0, 1, 'Plain text', header_format)
+    worksheet.write(0, 2, 'Correct? ➔', header_format)
+    worksheet.write(0, 3, 'Casualty description', header_format)
+    worksheet.write(0, 4, 'Correct? ➔', header_format)
+    worksheet.write(0, 5, 'Casualty description', header_format)
+    worksheet.write(0, 6, 'Correct? ➔', header_format)
+    worksheet.write(0, 7, 'Regions', header_format)
+    worksheet.write(0, 8, 'Correct? ➔', header_format)
+    worksheet.write(0, 9, 'Coordinates', header_format)
     worksheet.freeze_panes(1, 0)
 
 def insert_dropdown(worksheet, rows):
@@ -58,24 +60,27 @@ def insert_dropdown(worksheet, rows):
         'Invalid Inaccurate Complete', 'Valid Accurate Incomplete', 'Invalid Accurate Incomplete',
         'Valid Inaccurate Incomplete', 'Invalid Inaccurate Incomplete'
     ]
-    worksheet.data_validation(1, 1, rows, 1, {'validate': 'list', 'source': states})
-    worksheet.data_validation(1, 3, rows, 3, {'validate': 'list', 'source': states})
-    worksheet.data_validation(1, 5, rows, 5, {'validate': 'list', 'source': states})
-    worksheet.data_validation(1, 7, rows, 7, {'validate': 'list', 'source': states})
+    worksheet.data_validation(1, 2, rows, 2, {'validate': 'list', 'source': states})
+    worksheet.data_validation(1, 4, rows, 4, {'validate': 'list', 'source': states})
+    worksheet.data_validation(1, 6, rows, 6, {'validate': 'list', 'source': states})
+    worksheet.data_validation(1, 8, rows, 8, {'validate': 'list', 'source': states})
+
+def insert_source(worksheet, row, key, url, row_format):
+    worksheet.write_url(row, 0, url, row_format, key);
 
 def insert_plaintext(worksheet, row, plaintext):
-    worksheet.write(row, 0, plaintext)
+    worksheet.write(row, 1, plaintext)
 
 def insert_casualties(worksheet, row, description, count):
-    worksheet.write(row, 2, description)
-    worksheet.write(row, 4, count)
+    worksheet.write(row, 3, description)
+    worksheet.write(row, 5, count)
 
 def insert_regions(worksheet, row, regions):
     cell = ', '.join(regions)
-    worksheet.write(row, 6, cell)
+    worksheet.write(row, 7, cell)
 
 def insert_coordinates(worksheet, row, coordinates, row_format):
-    col = 8
+    col = 9
     for coordinate in coordinates:
         lat, lng = coordinate
         link_url = f'{LINK_URL}?zoom=4&mlat={lat}&mlon={lng}'
