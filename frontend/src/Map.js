@@ -41,19 +41,6 @@ const Map = () => {
     e.originalEvent.preventDefault();
   }, [setIncident]);
 
-  const onClusterClick = useCallback((e) => {
-    console.log(map);
-    if (!map) return;
-
-    const coordinates = e.features[0].geometry.coordinates;
-    const zoom = map.getZoom();
-
-    map.easeTo({
-      center: coordinates,
-      zoom: zoom + 1
-    });
-  }, [map]);
-
   const [popup, setPopup] = useState(null);
 
   useEffect(() => {
@@ -116,7 +103,7 @@ const Map = () => {
         type: 'geojson',
         data: incidentMarkers,
         cluster: true,
-        clusterMaxZoom: 14, // Max zoom to cluster points on
+        clusterMaxZoom: 4, // Max zoom to cluster points on
         clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
       });
 
@@ -170,13 +157,12 @@ const Map = () => {
         }
       });
 
-      map.on('click', 'clusters', onClusterClick);
+      map.on('click', 'clusters', (e) => map.easeTo({center: e.lngLat, zoom: map.getZoom() + 2}));
 
       map.on('click', 'unclustered-point', onIncidentClick);
 
       map.on('dblclick', 'countries', onCountryClick);
        
-      /*
       map.on('mouseenter', 'clusters', () => {
         map.getCanvas().style.cursor = 'pointer';
       });
@@ -184,7 +170,6 @@ const Map = () => {
       map.on('mouseleave', 'clusters', () => {
         map.getCanvas().style.cursor = '';
       });
-      */
 
       map.on('mouseenter', 'unclustered-point', () => {
         map.getCanvas().style.cursor = 'pointer';

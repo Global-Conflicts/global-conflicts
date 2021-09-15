@@ -6,6 +6,15 @@ const selectSelectedStartDate = state => state.timeline.selectedStartDate;
 const selectSelectedEndDate = state => state.timeline.selectedEndDate;
 const selectSelectedRegion = state => state.selectedRegion;
 
+const randomize = ([lng, lat]) => {
+  const radius = .1
+  const angle = Math.random() * Math.PI * 2;
+  return [
+    lng + Math.cos(angle) * radius, 
+    lat + Math.sin(angle) * radius
+  ]
+};
+
 const useFilteredIncidents = () => {
   const incidents = useSelector(selectIncidents)
   const selectedStartDate = useSelector(selectSelectedStartDate)
@@ -20,7 +29,13 @@ const useFilteredIncidents = () => {
       (selectedRegion === 'global' || 
       (i.regions && i.regions.includes(selectedRegion)))
     );
-    return incidents.filter(filter);
+    const map = (i) => {
+      const { coordinates } = i;
+      const randomizedCoordinates = coordinates.map(randomize);
+      return {...i, coordinates: randomizedCoordinates }
+    };
+
+    return incidents.filter(filter).map(map);
   }, [incidents, selectedStartDate, selectedEndDate, selectedRegion]);
 
   return filteredIncidents;

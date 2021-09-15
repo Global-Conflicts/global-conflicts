@@ -47,7 +47,7 @@ def insert_header(worksheet, header_format):
     worksheet.write(0, 2, 'Correct? ➔', header_format)
     worksheet.write(0, 3, 'Casualty description', header_format)
     worksheet.write(0, 4, 'Correct? ➔', header_format)
-    worksheet.write(0, 5, 'Casualty description', header_format)
+    worksheet.write(0, 5, 'Casualty count', header_format)
     worksheet.write(0, 6, 'Correct? ➔', header_format)
     worksheet.write(0, 7, 'Regions', header_format)
     worksheet.write(0, 8, 'Correct? ➔', header_format)
