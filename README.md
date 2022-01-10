@@ -4,7 +4,7 @@
 
 
 <p align="center">
-   <img src="gui-screenshot.png" alt="Screenshot" width="70%">
+   <img src="screenrecording.gif" alt="Screenshot" width="70%">
 </p>
 
 ## 1. Demo
