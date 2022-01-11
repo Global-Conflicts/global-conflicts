@@ -9,7 +9,7 @@
 
 ## 1. Demo
 
-Visit the demo website at: [global-conflicts.org](https://global-conflicts.org)
+Visit the demo website at: [global-conflicts.github.io](https://global-conflicts.github.io/)
 
 ## 2. Setup
 
