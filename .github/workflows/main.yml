@@ -38,12 +38,13 @@ jobs:
         run: |
           npm install --build-from-source
           npm run build
-          ls public/
+          ls la public/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
+          cname: global-conflicts.com
           personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: Global-Conflicts/global-conflicts.github.io
           publish_branch: main
