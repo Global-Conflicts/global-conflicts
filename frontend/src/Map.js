@@ -1,23 +1,55 @@
-import React, { 
-  useRef, 
-  useEffect,
-  useState,
-  useCallback
-} from 'react';
-import ReactDOMServer from 'react-dom/server';
-import mapboxgl from '!mapbox-gl';
-import { useSelector } from 'react-redux'
-import { setRegion, setIncident } from './redux/actions.js'
-import useIncidentMarkers from './redux/useIncidentMarkers.js'
-import Marker from './Marker.js'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import useIncidentMarkers from './redux/useIncidentMarkers.js';
 
+import LocationMarker from './components/LocationMarker';
+import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+const selectZoom = (state) => state.zoom;
+const selectCenter = (state) => state.center;
+const selectVisibleIncidents = (state) => state.visibleIncidents;
+
+
+const Mapbox = ReactMapboxGl({
+  accessToken:
+    'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA'
+});
+
+const Map = () => {
+  const incidentMarkers = useIncidentMarkers();
+  const zoom = useSelector(selectZoom);
+  const center = useSelector(selectCenter);
+  const visibleIncidents = useSelector(selectVisibleIncidents);
+
+  return <Mapbox
+    className="map"
+    style="mapbox://styles/mapbox/dark-v10"
+    center={center}
+    zoom={zoom}
+    doubleClickZoom={false}
+  >
+    <div className="map__border"></div>
+    {incidentMarkers.map((incident) => 
+      <Marker
+        key={`${incident.key}-${incident.name}`}
+        className={`location-marker-parent ${visibleIncidents.includes(incident.name) ? "" : "location-marker-parent--hidden"}`}
+        coordinates={incident.coordinates}
+        anchor="bottom">
+        <LocationMarker name={incident.name} />
+      </Marker>
+    )}
+    <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
+      <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
+    </Layer>
+  </Mapbox>;
+};
+
+/**
 const selectGeodata = state => state.geodata;
 const selectSelectedIncident = state => state.selectedIncident;
 
-mapboxgl.accessToken =
-  'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
-
-const Map = () => {
+const oldMap = () => {
   const mapContainerRef = useRef(null);
   const [map, setMap] = useState(null);
 
@@ -190,5 +222,6 @@ const Map = () => {
     <div ref={mapContainerRef} className='map-container' />
   );
 };
+**/
 
 export default Map;

@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useSelector } from 'react-redux'
 import { setRegion } from './redux/actions.js'
 import useRegionList from './redux/useRegionList.js'

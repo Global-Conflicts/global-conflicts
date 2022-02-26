@@ -48,7 +48,7 @@ def flatten_news_reports(subitems):
     return results
 
 def merge_parent_child(parent, child):
-    return parent.strip(" :") + ': ' + child
+    return child
 
 def convert_to_plain_text(report):
     return wikitextparser.parse(report).plain_text()

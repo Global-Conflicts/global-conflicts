@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux'
 
 const selectIncidents = state => state.incidents;
@@ -6,14 +6,12 @@ const selectSelectedStartDate = state => state.timeline.selectedStartDate;
 const selectSelectedEndDate = state => state.timeline.selectedEndDate;
 const selectSelectedRegion = state => state.selectedRegion;
 
-const randomize = ([lng, lat]) => {
-  const radius = .1
-  const angle = Math.random() * Math.PI * 2;
-  return [
-    lng + Math.cos(angle) * radius, 
-    lat + Math.sin(angle) * radius
-  ]
-};
+const datesEqual = (date1, date2) => (
+  date1 && date2 &&
+  (date1.getFullYear() === date2.getFullYear()) &&
+  (date1.getMonth() === date2.getMonth()) &&
+  (date1.getDate() === date2.getDate())
+);
 
 const useFilteredIncidents = () => {
   const incidents = useSelector(selectIncidents)
@@ -23,18 +21,18 @@ const useFilteredIncidents = () => {
 
   const filteredIncidents = useMemo(() => {
     const filter = (i) => (
-      i.coordinates.length > 0 &&
+      Object.values(i.coordinates).length > 0 &&
       i.timestamp >= selectedStartDate &&
       i.timestamp <= selectedEndDate &&
       (selectedRegion === 'global' || 
       (i.regions && i.regions.includes(selectedRegion)))
     );
+    let lastDate = null;
     const map = (i) => {
-      const { coordinates } = i;
-      const randomizedCoordinates = coordinates.map(randomize);
-      return {...i, coordinates: randomizedCoordinates }
+      const firstOfDate = !datesEqual(lastDate, i.timestamp);
+      lastDate = i.timestamp;
+      return {...i, firstOfDate: firstOfDate};
     };
-
     return incidents.filter(filter).map(map);
   }, [incidents, selectedStartDate, selectedEndDate, selectedRegion]);
 

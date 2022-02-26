@@ -1,6 +1,5 @@
-import React, { useMemo, useCallback } from 'react';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux'
-import sanitizeId from './sanitizeId.js'
 
 const selectGeodata = state => state.geodata;
 

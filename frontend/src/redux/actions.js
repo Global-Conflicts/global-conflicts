@@ -27,3 +27,17 @@ export const setTimelineEnd = (end) => {
     end
   });
 };
+
+export const addVisibleIncident = (incidentName) => {
+  store.dispatch({
+    type: 'ADD_VISIBLE_INCIDENT',
+    incidentName
+  });
+};
+
+export const removeVisibleIncident = (incidentName) => {
+  store.dispatch({
+    type: 'REMOVE_VISIBLE_INCIDENT',
+    incidentName
+  });
+};

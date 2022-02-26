@@ -25,7 +25,7 @@ def query_wikidata(wikitext):
     parameters = "\r\n".join(map(lambda x: f"\"{x}\"@en", links))
 
     query = f"""
-    SELECT ?point ?iso3code WHERE {{
+    SELECT ?page ?point ?iso3code WHERE {{
       VALUES ?page {{
         {parameters}
       }}
@@ -58,7 +58,7 @@ def query_wikidata(wikitext):
     data = json.loads(source)
 
     countries = []
-    coordinates = []
+    coordinates = dict()
 
     # Extract countries and coordinates
     for item in data['results']['bindings']:
@@ -68,21 +68,11 @@ def query_wikidata(wikitext):
                 countries.append(value)
 
         if 'point' in item:
+            name = item['page']['value']
             rawValue = item['point']['value']
             # note, lng and lat is switched in Wikidata Point
             [lng, lat] = rawValue.replace('Point(', '').replace(')', '').split(' ')
-            coordinates.append([float(lat), float(lng)])
-
-    deleted_indices = set()
-    combinations = list(itertools.combinations(enumerate(coordinates), 2))
-
-    for ((a_i, [a_lat, a_lng]), (_, [b_lat, b_lng])) in combinations:
-        if (round(a_lat) == round(b_lat)) and (round(a_lat) == round(b_lat)):
-            # duplicate fond
-            deleted_indices.add(a_i)
-
-    for i in sorted(deleted_indices, reverse=True):
-        del coordinates[i]
+            coordinates[name] = [float(lat), float(lng)]
 
     return countries, coordinates
 

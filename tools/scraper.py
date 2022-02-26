@@ -6,8 +6,8 @@ from datetime import date, timedelta
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('start', type=date.fromisoformat)
-    parser.add_argument('end', type=date.fromisoformat)
+    parser.add_argument('start', nargs="?", type=date.fromisoformat, default=date.today())
+    parser.add_argument('end', nargs="?", type=date.fromisoformat, default=date.today())
     args = parser.parse_args()
     scrape_range(args.start, args.end)
 

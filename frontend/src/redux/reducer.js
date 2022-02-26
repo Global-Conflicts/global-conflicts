@@ -1,5 +1,5 @@
 import geodata from '../data/geodata.json';
-import { incidents } from '../data/incidents.json';
+import { timestamp, incidents } from '../data/incidents.json';
 
 const filtered_incidents = incidents.map((i) => ({...i, timestamp: new Date(i.date)})).reverse();
 
@@ -11,11 +11,15 @@ const timeline = {
 };
 
 const initialState = {
+  timestamp: new Date(timestamp),
   geodata,
   timeline,
   incidents: filtered_incidents,
   selectedIncident: null,
-  selectedRegion: 'global'
+  selectedRegion: 'global',
+  visibleIncidents: [],
+  center: [25, 50],
+  zoom: [3.5]
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,6 +32,16 @@ const reducer = (state = initialState, action) => {
       return { ...state, timeline: { ...state.timeline, selectedStartDate: action.start } };
     case 'SET_TIMELINE_END':
       return { ...state, timeline: { ...state.timeline, selectedEndDate: action.end } };
+    case 'ADD_VISIBLE_INCIDENT':
+      const { visibleIncidents } = state;
+      return { ...state, visibleIncidents: [...visibleIncidents, action.incidentName] };
+    case 'REMOVE_VISIBLE_INCIDENT':
+      const visibleIncidents2 = [...state.visibleIncidents];
+      const index = visibleIncidents2.indexOf(action.incidentName);
+      if (index > -1) {
+          visibleIncidents2.splice(index, 1);
+      }
+      return { ...state, visibleIncidents: visibleIncidents2 };
     default:
       return state;
   }

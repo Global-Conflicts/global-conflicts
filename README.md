@@ -45,7 +45,7 @@ pip install -r requirements.txt
 Next, this command scrapes data from Wikipedia and Wikidata and stores plain text files in a given folder:
 
 ```sh
-python3 scraper.py 2022-02-20 2022-02-24 | python3 parser.py | python3 extractor.py "Armed attacks and conflicts" "Armed conflicts and attacks" | python3 locator.py | python3 jsonifier.py ../frontend/src/data/incidents.json
+python3 scraper.py 2022-02-20 | python3 parser.py | python3 extractor.py "Armed attacks and conflicts" "Armed conflicts and attacks" | python3 locator.py | python3 jsonifier.py ../frontend/src/data/incidents.json
 
 ```
 

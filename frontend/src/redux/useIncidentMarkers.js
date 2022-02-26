@@ -1,39 +1,26 @@
-import React, { useMemo, useCallback } from 'react';
+import { useMemo } from 'react';
+
 import useFilteredIncidents from './useFilteredIncidents'
+
 
 const useIncidentMarkers = () => {
   const filteredIncidents = useFilteredIncidents();
 
   const incidentMarkers = useMemo(() => {
-
-    const incidentsWithCoordinates = filteredIncidents.filter(({coordinates}) => coordinates.length > 0);
-
-    const filterA = (incident) => {
-      const { coordinates } = incident;
-      return coordinates.map(c => ({...incident, coordinates: [c]}))
-    };
-    const markers = incidentsWithCoordinates.map(filterA).flat();
+    const filterA = ({ coordinates }) => (Object.values(coordinates).length > 0);
 
     const filterB = (incident) => {
-      const [lat, lng] = incident['coordinates'][0];
-      return {
-        type: 'Feature',
-        properties: {
-          data: incident,
-          icon: 'theatre-15'
-        },
-        geometry: {
-          type: 'Point',
-          coordinates: [lng, lat]
-        }
-      }
+      const { coordinates } = incident;
+      return Object.entries(coordinates).map(([name, c]) => ({...incident, name: name, coordinates: [c]}))
     };
 
-    const features = markers.map(filterB);
-    return {
-      type: 'FeatureCollection',
-      features: features
-    }
+    const filterC = (incident) => {
+      const coordinates = Object.values(incident['coordinates'])
+      const [lat, lng] = coordinates[0];
+      return {...incident, coordinates: [lng, lat]}
+    };
+
+    return filteredIncidents.filter(filterA).map(filterB).flat().map(filterC);
   }, [filteredIncidents]);
 
   return incidentMarkers;

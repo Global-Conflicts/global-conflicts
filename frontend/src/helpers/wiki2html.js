@@ -13,10 +13,10 @@ function wiki2html(s, baseurl) {
     
     // lists need to be done using a function to allow for recusive calls
     function list(str) {
-        return str.replace(/(?:(?:(?:^|\n)[\*#].*)+)/g, function (m) {  // (?=[\*#])
+        return str.replace(/(?:(?:(?:^|\n)[*#].*)+)/g, function (m) {  // (?=[\*#])
             var type = m.match(/(^|\n)#/) ? 'OL' : 'UL';
             // strip first layer of list
-            m = m.replace(/(^|\n)[\*#][ ]{0,1}/g, "$1");
+            m = m.replace(/(^|\n)[*#][ ]{0,1}/g, "$1");
             m = list(m);
             return '<' + type + '><li>' + m.replace(/^\n/, '').split(/\n/).join('</li><li>') + '</li></' + type + '>';
         });
@@ -24,7 +24,7 @@ function wiki2html(s, baseurl) {
     
     return list(s
         /* BLOCK ELEMENTS */
-        .replace(/(?:^|\n+)([^# =\*<].+)(?:\n+|$)/gm, function (m, l) {
+        .replace(/(?:^|\n+)([^# =*<].+)(?:\n+|$)/gm, function (m, l) {
             if (l.match(/^\^+$/)) return l;
             return "\n<p>" + l + "</p>\n";
         })
@@ -52,12 +52,12 @@ function wiki2html(s, baseurl) {
             return '<em>' + l + '</em>';
         })
     
-        .replace(/[^\[](http[^\[\s]*)/g, function (m, l) { // normal link
+        .replace(/[^[](http[^[\s]*)/g, function (m, l) { // normal link
             return '<a target="_blank" href="' + l + '">' + l + '</a>';
         })
     
-        .replace(/[\[](http.*)[!\]]/g, function (m, l) { // external link
-            var p = l.replace(/[\[\]]/g, '').split(/ /);
+        .replace(/[[](http.*?)[!\]]/g, function (m, l) { // external link
+            var p = l.replace(/[[\]]/g, '').split(/ /);
             var link = p.shift();
             return '<a target="_blank" href="' + link + '">' + (p.length ? p.join(' ') : link) + '</a>';
         })
