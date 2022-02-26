@@ -35,8 +35,8 @@ jobs:
       - name: Install and build
         working-directory: ./frontend
         run: |
-          npm install --build-from-source
-          npm build
+          npm ci --build-from-source
+          npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
