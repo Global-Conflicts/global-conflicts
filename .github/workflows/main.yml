@@ -42,6 +42,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          working-directory: ./frontend
-          publish_dir: ./build
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: Global-Conflicts/global-conflicts.github.io
+          publish_branch: main
+          publish_dir: ./frontend/public
