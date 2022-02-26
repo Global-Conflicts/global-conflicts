@@ -147,6 +147,10 @@ body {
   height: 40px;
 }
 
+.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right {
+   visibility: none !important;
+}
+
 .incident-list .location-marker {
   white-space: nowrap;
 }

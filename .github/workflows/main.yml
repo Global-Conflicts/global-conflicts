@@ -18,6 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: 
+        working-directory: ./tools
+        run: |
+          pip install -r requirements.txt
+          python3 scraper.py | python3 parser.py | python3 extractor.py "Armed attacks and conflicts" "Armed conflicts and attacks" | python3 locator.py | python3 jsonifier.py ../frontend/src/data/incidents.json
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
