@@ -39,6 +39,7 @@ jobs:
           npm install --build-from-source
           npm run build
           ls -a public/
+          ls -a .
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
