@@ -35,7 +35,7 @@ jobs:
       - name: Install and build
         working-directory: ./frontend
         run: |
-          npm ci --build-from-source
+          npm install --build-from-source
           npm run build
 
       - name: Deploy
