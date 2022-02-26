@@ -2,11 +2,13 @@ name: Deploy
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  schedule:
+    # Every six hours
+    - cron: "0 */6 * * *"
 
   workflow_dispatch:
           
@@ -51,8 +53,6 @@ jobs:
         run: |
           npm install --build-from-source
           npm run build
-          ls -a dist/
-          ls -a .
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
