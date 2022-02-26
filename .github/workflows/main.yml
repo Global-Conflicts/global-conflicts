@@ -22,7 +22,10 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: 
+      - name: Install Curl
+        run: sudo apt-get install libssl-dev libcurl4-openssl-dev
+        
+      - name: Run python scripts 
         working-directory: ./tools
         run: |
           pip install -r requirements.txt
