@@ -31,7 +31,7 @@ jobs:
         working-directory: ./tools
         run: |
           pip install -r requirements.txt
-          python3 scraper.py | python3 parser.py | python3 extractor.py "Armed attacks and conflicts" "Armed conflicts and attacks" | python3 locator.py | python3 jsonifier.py ../frontend/src/data/incidents.json
+          python3 scraper.py 2022-02-01 | python3 parser.py | python3 extractor.py "Armed attacks and conflicts" "Armed conflicts and attacks" | python3 locator.py | python3 jsonifier.py ../frontend/src/data/incidents.json
 
       - name: Setup Node
         uses: actions/setup-node@v2
