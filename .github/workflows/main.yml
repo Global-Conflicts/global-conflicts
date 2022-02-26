@@ -38,7 +38,7 @@ jobs:
         run: |
           npm install --build-from-source
           npm run build
-          ls -a public/
+          ls -a dist/
           ls -a .
 
       - name: Deploy
@@ -49,4 +49,4 @@ jobs:
           personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: Global-Conflicts/global-conflicts.github.io
           publish_branch: main
-          publish_dir: ./frontend/public
+          publish_dir: ./frontend/dist
