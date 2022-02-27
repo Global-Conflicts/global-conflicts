@@ -89,6 +89,7 @@ body {
 
 .incident-list {
   overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,6 +102,10 @@ body {
   max-width: 550px;
   width: 85%;
   padding: 1.5rem 5rem;
+}
+
+.incident-list__item pre {
+  white-space: pre-wrap;
 }
 
 .incident-list__divider--date {
@@ -129,22 +134,18 @@ body {
   pointer-events: none;
 }
 
-.map .location-marker-parent {
-  transition-property: visibility, opacity;
-  transition-duration: 0s, 1s;
-  pointer-events: none;
-}
-
-.map .location-marker-parent--hidden {
-  opacity: 0;
-  visibility: hidden;
-  transition-property: opacity, visibility;
-  transition-duration: .5s, 0s;
-  transition-delay: 0s, .5s;
-}
-
 .map .location-marker svg {
   height: 40px;
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
 
 .mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right {

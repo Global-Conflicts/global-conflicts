@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
-
+import { useSelector } from 'react-redux';
 import useFilteredIncidents from './useFilteredIncidents'
 
+const selectVisibleIncidents = (state) => state.visibleIncidents;
 
 const useIncidentMarkers = () => {
   const filteredIncidents = useFilteredIncidents();
+  const visibleIncidents = useSelector(selectVisibleIncidents);
 
   const incidentMarkers = useMemo(() => {
     const filterA = ({ coordinates }) => (Object.values(coordinates).length > 0);
@@ -20,8 +22,11 @@ const useIncidentMarkers = () => {
       return {...incident, coordinates: [lng, lat]}
     };
 
-    return filteredIncidents.filter(filterA).map(filterB).flat().map(filterC);
-  }, [filteredIncidents]);
+    console.log(visibleIncidents);
+    const filterD = (incident) => (visibleIncidents.includes(incident.name));
+
+    return filteredIncidents.filter(filterA).map(filterB).flat().map(filterC).filter(filterD);
+  }, [filteredIncidents, visibleIncidents]);
 
   return incidentMarkers;
 }

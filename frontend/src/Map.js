@@ -8,7 +8,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const selectZoom = (state) => state.zoom;
 const selectCenter = (state) => state.center;
-const selectVisibleIncidents = (state) => state.visibleIncidents;
 
 
 const Mapbox = ReactMapboxGl({
@@ -20,7 +19,6 @@ const Map = () => {
   const incidentMarkers = useIncidentMarkers();
   const zoom = useSelector(selectZoom);
   const center = useSelector(selectCenter);
-  const visibleIncidents = useSelector(selectVisibleIncidents);
 
   return <Mapbox
     className="map"
@@ -33,7 +31,6 @@ const Map = () => {
     {incidentMarkers.map((incident) => 
       <Marker
         key={`${incident.key}-${incident.name}`}
-        className={`location-marker-parent ${visibleIncidents.includes(incident.name) ? "" : "location-marker-parent--hidden"}`}
         coordinates={incident.coordinates}
         anchor="bottom">
         <LocationMarker name={incident.name} />
