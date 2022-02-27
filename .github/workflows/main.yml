@@ -2,11 +2,13 @@ name: Deploy
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  schedule:
+    # Every six hours
+    - cron: "0 */6 * * *"
 
   workflow_dispatch:
           
@@ -20,13 +22,16 @@ jobs:
 
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: '3.8'
 
-      - name: 
+      - name: Install Curl
+        run: sudo apt-get install libssl-dev libcurl4-openssl-dev
+        
+      - name: Run python scripts 
         working-directory: ./tools
         run: |
           pip install -r requirements.txt
-          python3 scraper.py | python3 parser.py | python3 extractor.py "Armed attacks and conflicts" "Armed conflicts and attacks" | python3 locator.py | python3 jsonifier.py ../frontend/src/data/incidents.json
+          python3 scraper.py 2022-02-01 | python3 parser.py | python3 extractor.py "Armed attacks and conflicts" "Armed conflicts and attacks" | python3 locator.py | python3 jsonifier.py ../frontend/src/data/incidents.json
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -48,8 +53,6 @@ jobs:
         run: |
           npm install --build-from-source
           npm run build
-          ls -a dist/
-          ls -a .
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
