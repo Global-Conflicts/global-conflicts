@@ -63,3 +63,6 @@ jobs:
           external_repository: Global-Conflicts/global-conflicts.github.io
           publish_branch: main
           publish_dir: ./frontend/dist
+          
+      - name: Prevent Github 60 day inactivity
+        uses: gautamkrishnar/keepalive-workflow@master
