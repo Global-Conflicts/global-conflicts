@@ -1,5 +1,13 @@
 import { store } from './store';
 
+export const setIncidents = (incidents, timestamp) => {
+  store.dispatch({
+    type: 'SET_INCIDENTS',
+    incidents,
+    timestamp
+  });
+};
+
 export const setRegion = (region) => {
   store.dispatch({
     type: 'SET_REGION',

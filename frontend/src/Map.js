@@ -28,7 +28,7 @@ const Map = () => {
     doubleClickZoom={false}
   >
     <div className="map__border"></div>
-    {incidentMarkers.map((incident) => 
+    {incidentMarkers && incidentMarkers.map((incident) => 
       <Marker
         key={`${incident.key}-${incident.name}`}
         coordinates={incident.coordinates}

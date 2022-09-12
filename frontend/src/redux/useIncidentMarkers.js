@@ -9,6 +9,7 @@ const useIncidentMarkers = () => {
   const visibleIncidents = useSelector(selectVisibleIncidents);
 
   const incidentMarkers = useMemo(() => {
+    if (!filteredIncidents) return null;
     const filterA = ({ coordinates }) => (Object.values(coordinates).length > 0);
 
     const filterB = (incident) => {

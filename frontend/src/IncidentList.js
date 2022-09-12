@@ -51,11 +51,11 @@ const IncidentList = () => {
       <img className="header__logo" src={logo} alt="Logo" />
 
       {
-        incidents.map(item => <IncidentListItem key={item.key} item={item} />)
+        incidents && incidents.map(item => <IncidentListItem key={item.key} item={item} />)
       }
 
       <footer className="footer">
-        Last updated on {timestamp.toLocaleString('en-us', {dateStyle: 'short', timeStyle: 'short'})} using data from <a href="https://en.wikipedia.org/wiki/Portal:Current_events">Wikipedia.org</a>
+        Last updated on {timestamp && timestamp.toLocaleString('en-us', {dateStyle: 'short', timeStyle: 'short'})} using data from <a href="https://en.wikipedia.org/wiki/Portal:Current_events">Wikipedia.org</a>
       </footer>
 
     </div>

@@ -1,8 +1,3 @@
-import geodata from '../data/geodata.json';
-import { timestamp, incidents } from '../data/incidents.json';
-
-const filtered_incidents = incidents.map((i) => ({...i, timestamp: new Date(i.date)})).reverse();
-
 const timeline = {
   minDate: new Date('2010-01-01'),
   maxDate: new Date(),
@@ -11,10 +6,9 @@ const timeline = {
 };
 
 const initialState = {
-  timestamp: new Date(timestamp),
-  geodata,
+  timestamp: null,
   timeline,
-  incidents: filtered_incidents,
+  incidents: null,
   selectedIncident: null,
   selectedRegion: 'global',
   visibleIncidents: [],
@@ -24,6 +18,8 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'SET_INCIDENTS':
+      return { ...state, incidents: action.incidents, timestamp: new Date(action.timestamp) };
     case 'SET_REGION':
       return { ...state, selectedRegion: action.region };
     case 'SET_INCIDENT':

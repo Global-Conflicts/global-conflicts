@@ -20,6 +20,7 @@ const useFilteredIncidents = () => {
   const selectedRegion = useSelector(selectSelectedRegion)
 
   const filteredIncidents = useMemo(() => {
+    if (!incidents) return null;
     const filter = (i) => (
       Object.values(i.coordinates).length > 0 &&
       i.timestamp >= selectedStartDate &&
