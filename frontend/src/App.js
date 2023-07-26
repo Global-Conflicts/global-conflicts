@@ -1,6 +1,6 @@
 import React from 'react';
 import Main from './Main';
-import Map from './Map';
+import WorldMap from './WorldMap';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import { setIncidents } from './redux/actions';
@@ -17,7 +17,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        <Map />
+        <WorldMap />
         <Main />
       </div>
     </Provider>

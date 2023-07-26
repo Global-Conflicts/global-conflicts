@@ -1,24 +1,39 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import useIncidentMarkers from './redux/useIncidentMarkers.js';
 
-import LocationMarker from './components/LocationMarker';
-import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import LocationMarker from './components/LocationMarker.js';
+
+import Map, {NavigationControl, Marker} from 'react-map-gl/maplibre';
+import 'maplibre-gl/dist/maplibre-gl.css';
 
 const selectZoom = (state) => state.zoom;
 const selectCenter = (state) => state.center;
 
 
-const Mapbox = ReactMapboxGl({
-  accessToken:
-    'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA'
-});
-
-const Map = () => {
+const WorldMap = () => {
   const incidentMarkers = useIncidentMarkers();
-  const zoom = useSelector(selectZoom);
-  const center = useSelector(selectCenter);
+
+  return  <Map 
+    initialViewState={{
+      longitude: 30,
+      latitude: 50,
+      zoom: 2,
+    }}
+    mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+    className="map"
+    doubleClickZoom={false}
+  >
+    <NavigationControl position="top-left" />
+    {incidentMarkers && incidentMarkers.map((incident) => 
+      <Marker
+        key={`${incident.key}-${incident.name}`}
+        longitude={incident.coordinates[0]}
+        latitude={incident.coordinates[1]}
+        anchor="bottom">
+        <LocationMarker name={incident.name} />
+      </Marker>
+    )}
+  </Map>
 
   return <Mapbox
     className="map"
@@ -221,4 +236,4 @@ const oldMap = () => {
 };
 **/
 
-export default Map;
+export default WorldMap;

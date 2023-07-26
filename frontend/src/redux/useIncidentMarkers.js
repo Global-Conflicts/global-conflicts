@@ -23,7 +23,6 @@ const useIncidentMarkers = () => {
       return {...incident, coordinates: [lng, lat]}
     };
 
-    console.log(visibleIncidents);
     const filterD = (incident) => (visibleIncidents.includes(incident.name));
 
     return filteredIncidents.filter(filterA).map(filterB).flat().map(filterC).filter(filterD);

@@ -2,16 +2,19 @@
   "name": "global-conflicts-frontend",
   "version": "0.0.1",
   "dependencies": {
-    "html-react-parser": "^1.3.0",
-    "mapbox-gl": "^1.13.2",
-    "mapboxgl-spiderifier": "^1.0.6",
-    "parcel": "^2.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "html-react-parser": "^4.2.0",
+    "mapbox-gl": "^2.15.0",
+    "mapboxgl-spiderifier": "^1.0.10",
+    "maplibre-gl": "^3.2.1",
+    "parcel": "^2.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.5.2",
+    "react-map-gl": "^7.1.3",
     "react-mapbox-gl": "^5.1.1",
-    "react-redux": "^7.2.5",
-    "react-timeline-range-slider": "^1.3.0",
-    "redux": "^4.1.2"
+    "react-redux": "^8.1.1",
+    "react-timeline-range-slider": "^1.4.1",
+    "redux": "^4.2.1"
   },
   "scripts": {
     "start": "parcel serve public/index.html",
@@ -28,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
   }
 }

@@ -12,8 +12,6 @@ const initialState = {
   selectedIncident: null,
   selectedRegion: 'global',
   visibleIncidents: [],
-  center: [25, 50],
-  zoom: [3.5]
 };
 
 const reducer = (state = initialState, action) => {
