@@ -24,7 +24,7 @@ def main():
             output = json.dumps({
                 'key': key,
                 'wikitext': report,
-                'plaintext': plaintext,
+            #    'plaintext': plaintext, # Don't save plaintext to reduce file size
                 'date': date,
                 'url': data['url']
             })
