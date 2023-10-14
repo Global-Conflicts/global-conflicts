@@ -1,7 +1,10 @@
 import React, { useCallback } from 'react';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import { setIncident } from './redux/actions.js'
 import useFilteredIncidents from './redux/useFilteredIncidents.js'
 import LocationMarkerWithLink from './components/LocationMarkerWithLink';
+import About from './About';
 import parse from 'html-react-parser';
 import wiki2html from './helpers/wiki2html';
 import { useSelector } from 'react-redux'
@@ -49,6 +52,14 @@ const IncidentList = () => {
     <div className="incident-list">
 
       <img className="header__logo" src={logo} alt="Logo" />
+
+      <span>
+        [&ensp;
+        <Popup trigger={<a href="#">About this project</a>} modal nested>
+          {close => <About close={close} />}
+        </Popup>
+        &ensp;]
+      </span>
 
       {
         incidents && incidents.map(item => <IncidentListItem key={item.key} item={item} />)

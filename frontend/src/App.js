@@ -1,7 +1,8 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+
 import Main from './Main';
 import WorldMap from './WorldMap';
-import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import { setIncidents } from './redux/actions';
 

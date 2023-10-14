@@ -70,7 +70,7 @@ body {
   color: #fffefea9;
 }
 
-.main a {
+a {
   color: white;
   white-space: nowrap;
   text-decoration: none;
@@ -78,14 +78,22 @@ body {
   border-bottom: 1px solid rgba(0,0,0,0);
 }
 
-.main a:hover {
+a:hover {
   border-bottom: 1px solid #fffefe85;
 }
 
-.main a > em {
+a > em {
   font-style: normal;   
 }
 
+.popup-content {
+  padding: 4rem !important;
+  color: #fffefea9 !important;
+  background-color: #0e0e0e !important;
+  border: none !important;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
 
 .incident-list {
   overflow-y: scroll;
