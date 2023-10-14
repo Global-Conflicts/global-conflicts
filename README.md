@@ -1,7 +1,6 @@
 # Visualization of armed conflicts from Wikipedia
 
-> A web application for the bachelor's thesis on »Geospatial visualization of Wikipedia news reports about armed conflicts«
-
+> A web application for the bachelor's thesis on »[Geospatial visualization of Wikipedia news reports about armed conflicts](https://raw.githubusercontent.com/Global-Conflicts/thesis/master/Thesis.pdf)«
 
 <p align="center">
    <img src="screenrecording.gif" alt="Screenshot" width="70%">
