@@ -6,10 +6,11 @@ from datetime import date, timedelta
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('start', nargs="?", type=date.fromisoformat, default=date.today())
-    parser.add_argument('end', nargs="?", type=date.fromisoformat, default=date.today())
+    parser.add_argument('days', nargs="?", type=int, default=30)
     args = parser.parse_args()
-    scrape_range(args.start, args.end)
+    start_date = date.today() - timedelta(days=args.days)
+    end_date = date.today()
+    scrape_range(start_date, end_date)
 
 def scrape_range(start, end):
     dates = [start + timedelta(days=x) for x in range((end - start).days + 1)]
