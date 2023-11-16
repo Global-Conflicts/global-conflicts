@@ -13,13 +13,13 @@ function numberToColor(number) {
 }
 
 
-export default function LocationMarker({ name, children, inline }) {
+export default function LocationMarker({ name, children, inline, onClick }) {
   const randomNumber = randomNumberFromString(name);
   const color = numberToColor(randomNumber);
   const letter = name[0];
   const id = `${letter}${randomNumber}${inline ? '-inline': ''}`
   return <span className="location-marker">
-    <svg viewBox="0 0 10 14" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 10 14" xmlns="http://www.w3.org/2000/svg" onClick={onClick}>
       <defs>
         <mask id={id}>
           <path d="m-1-1h12v16h-12z" fill="white"/>

@@ -15,7 +15,7 @@ export default function LocationMarkerWithLink({ name, url }) {
     },
   });
 
-  return <LocationMarker name={name} inline={true}>
+  return <LocationMarker name={name} inline={true} onClick={window.alert}>
     <a ref={ref} href={url} >{name}</a>
   </LocationMarker>
 }

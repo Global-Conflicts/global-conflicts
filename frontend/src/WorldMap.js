@@ -34,27 +34,6 @@ const WorldMap = () => {
       </Marker>
     )}
   </Map>
-
-  return <Mapbox
-    className="map"
-    style="mapbox://styles/mapbox/dark-v10"
-    center={center}
-    zoom={zoom}
-    doubleClickZoom={false}
-  >
-    <div className="map__border"></div>
-    {incidentMarkers && incidentMarkers.map((incident) => 
-      <Marker
-        key={`${incident.key}-${incident.name}`}
-        coordinates={incident.coordinates}
-        anchor="bottom">
-        <LocationMarker name={incident.name} />
-      </Marker>
-    )}
-    <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-      <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
-    </Layer>
-  </Mapbox>;
 };
 
 /**
