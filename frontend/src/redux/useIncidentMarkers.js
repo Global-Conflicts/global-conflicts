@@ -4,9 +4,12 @@ import useFilteredIncidents from './useFilteredIncidents'
 
 const selectVisibleIncidents = (state) => state.visibleIncidents;
 
+const selectSelectedLocation = (state) => state.selectedLocation;
+
 const useIncidentMarkers = () => {
   const filteredIncidents = useFilteredIncidents();
   const visibleIncidents = useSelector(selectVisibleIncidents);
+  const selectedLocation = useSelector(selectVisibleIncidents);
 
   const incidentMarkers = useMemo(() => {
     if (!filteredIncidents) return null;
@@ -25,8 +28,13 @@ const useIncidentMarkers = () => {
 
     const filterD = (incident) => (visibleIncidents.includes(incident.name));
 
+    const filterE = (incident) => {
+      const { coordinates } = incident;
+      return {...incident, isSelected: incident.name === selectedLocation}
+    };
+
     return filteredIncidents.filter(filterA).map(filterB).flat().map(filterC).filter(filterD);
-  }, [filteredIncidents, visibleIncidents]);
+  }, [filteredIncidents, visibleIncidents, selectedLocation]);
 
   return incidentMarkers;
 }

@@ -9,7 +9,7 @@ const initialState = {
   timestamp: null,
   timeline,
   incidents: null,
-  selectedIncident: null,
+  selectedLocation: null,
   selectedRegion: 'global',
   visibleIncidents: [],
 };
@@ -20,8 +20,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, incidents: action.incidents, timestamp: new Date(action.timestamp) };
     case 'SET_REGION':
       return { ...state, selectedRegion: action.region };
-    case 'SET_INCIDENT':
-      return { ...state, selectedIncident: action.incident };
+    case 'SET_LOCATION':
+      return { ...state, selectedLocation: action.location };
     case 'SET_TIMELINE_START':
       return { ...state, timeline: { ...state.timeline, selectedStartDate: action.start } };
     case 'SET_TIMELINE_END':

@@ -15,10 +15,10 @@ export const setRegion = (region) => {
   });
 };
 
-export const setIncident = (incident) => {
+export const setLocation = (location) => {
   store.dispatch({
-    type: 'SET_INCIDENT',
-    incident
+    type: 'SET_LOCATION',
+    location
   });
 };
 

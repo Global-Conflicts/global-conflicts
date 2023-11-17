@@ -2,6 +2,7 @@ import LocationMarker from "./LocationMarker";
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { addVisibleIncident, removeVisibleIncident } from "../redux/actions";
+import { setLocation } from '../redux/actions';
 
 export default function LocationMarkerWithLink({ name, url }) {
 
@@ -15,7 +16,7 @@ export default function LocationMarkerWithLink({ name, url }) {
     },
   });
 
-  return <LocationMarker name={name} inline={true} onClick={window.alert}>
+  return <LocationMarker name={name} inline={true} onClick={setLocation(name)}>
     <a ref={ref} href={url} >{name}</a>
   </LocationMarker>
 }

@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { setIncident } from './redux/actions.js'
 import useFilteredIncidents from './redux/useFilteredIncidents.js'
 import LocationMarkerWithLink from './components/LocationMarkerWithLink';
 import About from './About';
@@ -15,19 +14,13 @@ const selectTimestamp = (state) => state.timestamp;
 const baseurl = 'https://en.wikipedia.org/wiki/'
 
 const IncidentListItem = ({ item }) => {
-
-  const onSelectIncident = useCallback(({ target }) => {
-    setIncident(item);
-  }, [setIncident, item]);
-
   return (
     <>
-      
       {item.firstOfDate
         ? <span className="incident-list__divider incident-list__divider--date">{item.timestamp.toLocaleString('en-us', {weekday: 'short'})}, {item.timestamp.toLocaleString('en-us', {dateStyle: 'short'})} </span>
         : <div className="incident-list__divider incident-list__divider--divider"></div>
       }
-      <div className="incident-list__item" onClick={onSelectIncident}>
+      <div className="incident-list__item">
         {parse(wiki2html(item.wikitext, baseurl), {
           replace: (node) => {
             if (node.name === "a") {
